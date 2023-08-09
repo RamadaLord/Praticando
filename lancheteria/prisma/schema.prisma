@@ -6,6 +6,17 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = "mysql://root@localhost:3306/lancheteria"
+}
+
+model User{
+  id String @id @default(uuid())
+  nome String
+  email String
+  senha String
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("usuarios")
 }
