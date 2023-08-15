@@ -10,13 +10,31 @@ datasource db {
   url      = "mysql://root@localhost:3306/lancheteria"
 }
 
-model User{
-  id String @id @default(uuid())
-  nome String
-  email String
-  senha String
+model User {
+  id        String    @id @default(uuid())
+  nome      String
+  email     String
+  senha     String
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())
 
   @@map("usuarios")
+}
+
+model Clientes {
+  id          String    @id @default(uuid())
+  nome        String
+  cpf_cnpj    String
+  rg_ie       String
+  tel_cel     String
+  tel_fixo    String
+  rua         String
+  complemento String
+  bairro      String
+  cidade      String
+  estado      String
+  create_at   DateTime? @default(now())
+  update_at   DateTime? @default(now())
+
+  @@map("clientes")
 }
