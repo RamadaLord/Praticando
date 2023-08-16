@@ -82,9 +82,7 @@ class CriarClienteServices {
         estado: true,
       },
     });
-    return { nome: clientes };
+    return { Dados: clientes };
   }
-
-  
 }
 export { CriarClienteServices };

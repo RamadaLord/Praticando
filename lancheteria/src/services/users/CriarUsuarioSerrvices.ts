@@ -21,18 +21,18 @@ class CriarUsuarioServices {
     }
 
     const usuario = await prismaClient.user.create({
-        data:{
-            nome:nome,
-            email:email,
-            senha:senha
-        },
-        select:{
-            id:true,
-            nome:true,
-            email:true
-        }
-    })
-    return {nome:usuario}
+      data: {
+        nome: nome,
+        email: email,
+        senha: senha,
+      },
+      select: {
+        id: true,
+        nome: true,
+        email: true,
+      },
+    });
+    return { Dados: usuario };
   }
 }
 
