@@ -31,16 +31,16 @@ function FormularioClientes() {
       return;
     }
 
-    // alert(`Cliente: ${cod_cliente}
-    //     \nNome: ${nome}
-    //     \nTelefone Fixo: ${telefone_Fixo}
-    //     \nTelefone Celular: ${telefone_Celular}
-    //     \nRua: ${buscaCep.logradouro}
-    //     \nComplemento: ${buscaCep.complemento}
-    //     \nCEP: ${cep}
-    //     \nBairro: ${buscaCep.bairro}
-    //     \nCidade: ${buscaCep.localidade}
-    //     \nEstado: ${buscaCep.uf}`);
+    alert(`Cliente: ${cod_cliente}
+        \nNome: ${nome}
+        \nTelefone Fixo: ${tel_fixo}
+        \nTelefone Celular: ${tel_cel}
+        \nRua: ${rua}
+        \nComplemento: ${comp}
+        \nCEP: ${cep}
+        \nBairro: ${bairro}
+        \nCidade: ${cidade}
+        \nEstado: ${uf}`);
   }
   return (
     <div id="formulario">
