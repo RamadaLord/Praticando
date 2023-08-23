@@ -1,0 +1,21 @@
+.img{
+    width: 150px;
+    mix-blend-mode: color-dodge ;
+}
+
+.img2{
+    mix-blend-mode: color-burn;
+    margin: 10px;
+    transition: 0.5s all;
+}
+
+.img2:hover{
+    scale: 1.75;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.bot{
+    background: none;
+    border: none;
+}
