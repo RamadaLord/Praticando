@@ -1,5 +1,6 @@
 import { IMaskInput } from "react-imask";
 import React, { useEffect, useState } from "react";
+import apiBack from "../services/api";
 import "../css/formulario.css";
 function FormularioClientes() {
   const [cod_cliente, setCod_cliente] = useState("");
@@ -41,6 +42,19 @@ function FormularioClientes() {
         \nBairro: ${bairro}
         \nCidade: ${cidade}
         \nEstado: ${uf}`);
+
+    // await apiBack.post("/", {
+    //   nome,
+    //   cpf_cnpj,
+    //   rg_ie,
+    //   tel_cel,
+    //   tel_fixo,
+    //   rua,
+    //   complemento,
+    //   bairro,
+    //   cidade,
+    //   estado,
+    // });
   }
   return (
     <div id="formulario">
@@ -63,7 +77,7 @@ function FormularioClientes() {
           type="text"
           placeholder="Seu nome aqui"
           value={nome}
-          onChange={(e)=> setNome(e.target.value)}
+          onChange={(e) => setNome(e.target.value)}
         />
         <br />
 
@@ -92,7 +106,7 @@ function FormularioClientes() {
           mask="(00)0000-0000"
           placeholder="(14)3232-3232"
           value={tel_fixo}
-          onChange={(e)=>setTel_fixo(e.target.value)}
+          onChange={(e) => setTel_fixo(e.target.value)}
         />
         <br />
         <label>Telefone Celular</label>
@@ -101,7 +115,7 @@ function FormularioClientes() {
           mask="(00)00000-0000"
           placeholder="(14)99999-9999"
           value={tel_cel}
-          onChange={(e)=> setTel_cel(e.target.value)}
+          onChange={(e) => setTel_cel(e.target.value)}
         />
         <br />
 
@@ -111,7 +125,7 @@ function FormularioClientes() {
           mask="00000-000"
           placeholder="xxxxx-xxxx"
           value={cep}
-          onChange={(e)=> setCep(e.target.value)}
+          onChange={(e) => setCep(e.target.value)}
         />
         <br />
 
@@ -121,7 +135,7 @@ function FormularioClientes() {
           type="text"
           placeholder="Digite sua Rua"
           value={rua}
-          onChange={(e)=>setRua(e.target.value)}
+          onChange={(e) => setRua(e.target.value)}
         />
         <br />
         <label>Complemento</label>
@@ -129,7 +143,7 @@ function FormularioClientes() {
           id="input"
           placeholder="Digite o complemento"
           value={comp}
-          onChange={(e)=>setComp(e.target.value)}
+          onChange={(e) => setComp(e.target.value)}
         />
         <br />
         <label>Bairro</label>
@@ -138,7 +152,7 @@ function FormularioClientes() {
           type="text"
           placeholder="Digite seu bairro"
           value={bairro}
-          onChange={(e)=> setBairro(e.target.value)}
+          onChange={(e) => setBairro(e.target.value)}
         />
         <br />
         <label>Cidade</label>
@@ -147,7 +161,7 @@ function FormularioClientes() {
           type="text"
           placeholder="Digite sua cidade"
           value={cidade}
-          onChange={(e)=> setCidade(e.target.value)}
+          onChange={(e) => setCidade(e.target.value)}
         />
         <br />
         <label>Estado</label>
@@ -156,7 +170,7 @@ function FormularioClientes() {
           type="text"
           placeholder="Digite seu estado"
           value={uf}
-          onChange={(e)=>setUf(e.target.value)}
+          onChange={(e) => setUf(e.target.value)}
         />
         <br />
         <button className="btn" type="submit">
