@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
-app.listen(3333, () => {
-  console.log("servidor rodando na porta 3333");
+app.listen(2222, () => {
+  console.log("servidor rodando na porta 2222");
 });
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
