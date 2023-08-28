@@ -84,7 +84,7 @@ function FormularioClientes() {
         <label>CPF</label>
         <IMaskInput
           id="input"
-          type="text"
+          mask="000.000.000-00"
           placeholder="Seu CPF aqui"
           value={cpf_cnpj}
           onChange={(e) => setCpf(e.target.value)}
@@ -94,7 +94,7 @@ function FormularioClientes() {
         <label>RG</label>
         <IMaskInput
           id="input"
-          type="text"
+          mask="00.000.00-00"
           placeholder="Seu RG aqui"
           value={rg_ie}
           onChange={(e) => setRg(e.target.value)}
@@ -167,7 +167,7 @@ function FormularioClientes() {
         <label>Estado</label>
         <IMaskInput
           id="input"
-          type="text"
+          mask=""
           placeholder="Digite seu estado"
           value={estado}
           onChange={(e) => setUf(e.target.value)}
