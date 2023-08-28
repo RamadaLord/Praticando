@@ -2,8 +2,6 @@ import { IMaskInput } from "react-imask";
 import React, { useEffect, useState } from "react";
 import "../css/formulario.css";
 function Formulario() {
-  const [cod_cliente, setCod_cliente] = useState("");
-  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 

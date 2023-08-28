@@ -5,16 +5,16 @@ import "../css/formulario.css";
 function FormularioClientes() {
   const [cod_cliente, setCod_cliente] = useState("");
   const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [rg, setRg] = useState("");
+  const [cpf_cnpj, setCpf] = useState("");
+  const [rg_ie, setRg] = useState("");
   const [tel_fixo, setTel_fixo] = useState("");
   const [tel_cel, setTel_cel] = useState("");
   const [cep, setCep] = useState("");
   const [rua, setRua] = useState("");
-  const [comp, setComp] = useState("");
+  const [complemento, setComp] = useState("");
   const [bairro, setBairro] = useState("");
   const [cidade, setCidade] = useState("");
-  const [uf, setUf] = useState("");
+  const [estado, setUf] = useState("");
 
   useEffect(() => {
     function codigoCliente() {
@@ -27,7 +27,7 @@ function FormularioClientes() {
   async function handleFormulario(e) {
     e.preventDefault();
 
-    if (nome === "" || tel_cel === "" || cpf === "") {
+    if (nome === "" || tel_cel === "" || cpf_cnpj === "") {
       alert("!!CAMPOS EM BRANCO!!");
       return;
     }
@@ -37,24 +37,24 @@ function FormularioClientes() {
         \nTelefone Fixo: ${tel_fixo}
         \nTelefone Celular: ${tel_cel}
         \nRua: ${rua}
-        \nComplemento: ${comp}
+        \nComplemento: ${complemento}
         \nCEP: ${cep}
         \nBairro: ${bairro}
         \nCidade: ${cidade}
-        \nEstado: ${uf}`);
+        \nEstado: ${estado}`);
 
-    // await apiBack.post("/", {
-    //   nome,
-    //   cpf_cnpj,
-    //   rg_ie,
-    //   tel_cel,
-    //   tel_fixo,
-    //   rua,
-    //   complemento,
-    //   bairro,
-    //   cidade,
-    //   estado,
-    // });
+    await apiBack.post("/", {
+      nome,
+      cpf_cnpj,
+      rg_ie,
+      tel_cel,
+      tel_fixo,
+      rua,
+      complemento,
+      bairro,
+      cidade,
+      estado,
+    });
   }
   return (
     <div id="formulario">
@@ -86,7 +86,7 @@ function FormularioClientes() {
           id="input"
           type="text"
           placeholder="Seu CPF aqui"
-          value={cpf}
+          value={cpf_cnpj}
           onChange={(e) => setCpf(e.target.value)}
         />
         <br />
@@ -96,7 +96,7 @@ function FormularioClientes() {
           id="input"
           type="text"
           placeholder="Seu RG aqui"
-          value={rg}
+          value={rg_ie}
           onChange={(e) => setRg(e.target.value)}
         />
         <br />
@@ -142,7 +142,7 @@ function FormularioClientes() {
         <IMaskInput
           id="input"
           placeholder="Digite o complemento"
-          value={comp}
+          value={complemento}
           onChange={(e) => setComp(e.target.value)}
         />
         <br />
@@ -169,7 +169,7 @@ function FormularioClientes() {
           id="input"
           type="text"
           placeholder="Digite seu estado"
-          value={uf}
+          value={estado}
           onChange={(e) => setUf(e.target.value)}
         />
         <br />
