@@ -10,7 +10,7 @@ function Formulario() {
   async function handleFormulario(e){
     e.preventDefault();
 
-    await apiBack.post("/CriarUsuarios",{
+    await apiBack.post("/CriarClientes",{
       nome,
       email,
       senha

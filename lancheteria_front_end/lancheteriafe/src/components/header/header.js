@@ -16,7 +16,7 @@ export default function Header (){
         <Link to="/FormularioProdutos">/ Produtos </Link>
         </h1>
         <h2>
-          <Link to="/Recupera">Dados</Link>
+          <Link to="/ListarUsuarios">Dados</Link>
         </h2>
         </div>
     )

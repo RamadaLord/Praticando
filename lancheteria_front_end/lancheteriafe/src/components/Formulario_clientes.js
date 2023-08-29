@@ -43,7 +43,7 @@ function FormularioClientes() {
         \nCidade: ${cidade}
         \nEstado: ${estado}`);
 
-    await apiBack.post("/", {
+    await apiBack.post("/CriarClientes", {
       nome,
       cpf_cnpj,
       rg_ie,

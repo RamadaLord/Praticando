@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiBack = axios.create({
-  baseURL: "mysql://root@localhost:3306/lancheteria/CriarUsuario/"
+  baseURL: "http://localhost:3333"
  
 });
 export default apiBack;
