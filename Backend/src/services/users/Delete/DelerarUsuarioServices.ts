@@ -1,14 +1,14 @@
 import prismaClient from "../../../../prisma";
 
 interface DeletarUsuario {
-  remove: string;
+  remover: string;
 }
 
 class DeletarUsuarioServices {
-  async execute({ remove }: DeletarUsuario) {
+  async execute({ remover }: DeletarUsuario) {
     const deleteUser = await prismaClient.user.delete({
       where: {
-        id: remove,
+        id: remover,
       },
     });
     console.log(deleteUser);

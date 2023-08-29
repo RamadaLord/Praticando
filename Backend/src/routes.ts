@@ -11,11 +11,10 @@ router.post("/CriarUsuarios", new CriarUsuarioController().handle);
 router.delete("/DeletarUsuario", new DeletarUsuarioController().handle);
 //clientes
 router.post("/CriarClientes", new CriarClienteController().handle);
+router.get("/ListarClientes", new ListarClientesController().handle);
 //Produtos
 router.post("/CriarProdutos", new CriarProdutosController().handle);
 //----------//
-//Get
-//Cleintes
-router.get("/ListarClientes", new ListarClientesController().handle);
+
 
 export { router };
