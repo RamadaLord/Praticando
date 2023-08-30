@@ -1,5 +1,6 @@
 /* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
+import { GiTrashCan } from 'react-icons/gi'
 import apiBack from "../services/api";
 import "../css/dados.css";
 
@@ -21,18 +22,24 @@ export default function ListarUsuarios() {
   }
 
   return (
-    <div className="dados">
+    <div >
       <h1>Listar Dados De Usuario</h1>
       {usuarios.map((usuario) => {
 
         return(
 
-        <article key={usuario.id}>
+        <article  className="dados" key={usuario.id}>
           <p>
             ID : {usuario.id}
             <br/>
             Nome: {usuario.nome}
-          <button Color='red' onClick={()=> excluirUsuario(usuario.id)}>p</button>
+            <br/>
+            E-mail: {usuario.email}
+          <br/>
+          <center>
+            <GiTrashCan className="btn" onClick={()=> excluirUsuario(usuario.id)}/>
+            </center>
+          <br/>
           </p>
         </article>
         )

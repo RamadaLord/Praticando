@@ -22,7 +22,7 @@
     font-size: 1.5em;
     font-family: 'open_sansregular';
     transition: 0.4s;
-    text-shadow: 10 0 0.125em rgba(0, 0, 0, 0.5), 0 0 0.25em currentColor;
+    text-shadow: 10 0 0.125em rgba(0, 0, 10, 0.5), 0 0 0.25em currentColor;
     box-shadow: inset 0 0 0.5em 0 var(--cor-caixa), 0 0 0.5em 0 var(--cor-caixa);
 }
 
@@ -32,4 +32,17 @@
     font-size: 20px;
     width: 25vw;
     padding: 30px 20px;
+}
+
+.btn:hover{
+    scale: 1.1;
+    transition: 1.75 all;
+}
+
+.btn{
+    background: red;
+    border: red solid 5px;
+    margin: -31px;
+    padding: 10px;
+    width: 50px;
 }
