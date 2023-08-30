@@ -4,7 +4,7 @@
     --cor-texto: #709399;
 }
 
-#dados {
+.dados {
     width: 88%;
     align-items: center;
     display: inline-block;
