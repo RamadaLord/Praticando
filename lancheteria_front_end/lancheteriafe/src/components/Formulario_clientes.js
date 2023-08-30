@@ -1,8 +1,14 @@
 import { IMaskInput } from "react-imask";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import apiBack from "../services/api";
 import "../css/formulario.css";
+
+
 function FormularioClientes() {
+
+  const navigate = useNavigate()
+
   const [cod_cliente, setCod_cliente] = useState("");
   const [nome, setNome] = useState("");
   const [cpf_cnpj, setCpf] = useState("");
@@ -55,6 +61,9 @@ function FormularioClientes() {
       cidade,
       estado,
     });
+
+    navigate("/ListarUsuarios")
+
   }
   return (
     <div id="formulario">
