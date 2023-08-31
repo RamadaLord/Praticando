@@ -1,11 +1,14 @@
 import { IMaskInput } from "react-imask";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/formulario.css";
 import apiBack from "../services/api";
 function Formulario() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [nome, setNome] = useState("");
+
+  const navigate = useNavigate()
 
   async function handleFormulario(e){
     e.preventDefault();
@@ -15,6 +18,9 @@ function Formulario() {
       email,
       senha
     })
+
+    navigate("/ListarUsuarios")
+
   }
   return (
     <div id="formulario">

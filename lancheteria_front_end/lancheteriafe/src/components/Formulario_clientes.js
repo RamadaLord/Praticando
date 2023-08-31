@@ -62,7 +62,7 @@ function FormularioClientes() {
       estado,
     });
 
-    navigate("/ListarUsuarios")
+    navigate("/ListarClientes")
 
   }
   return (

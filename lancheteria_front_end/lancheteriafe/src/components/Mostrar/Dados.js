@@ -1,8 +1,9 @@
 /* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
+import { LuEdit } from 'react-icons/lu'
 import { GiTrashCan } from 'react-icons/gi'
-import apiBack from "../services/api";
-import "../css/dados.css";
+import apiBack from "../../services/api";
+import "../../css/dados.css";
 
 export default function ListarUsuarios() {
   const [usuarios, setUsuarios] = useState([""]);
@@ -37,7 +38,8 @@ export default function ListarUsuarios() {
             E-mail: {usuario.email}
           <br/>
           <center>
-            <GiTrashCan className="btn" onClick={()=> excluirUsuario(usuario.id)}/>
+          <LuEdit  />
+            <GiTrashCan onClick={()=> excluirUsuario(usuario.id)}/>
             </center>
           <br/>
           </p>
