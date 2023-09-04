@@ -30,7 +30,7 @@ export default function FormularioProdutos() {
 
     alert(`Produtos: ${id}
         \nNome:${nome} 
-        \nfrabricante:${fabricante}
+        \nfabricante:${fabricante}
         \nquantidade:${quantidade}
         \npreco:${preco}`);
 
@@ -49,51 +49,56 @@ export default function FormularioProdutos() {
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleFormulario}>
         <label>ID:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
           placeholder="ID"
           disabled
           value={id}
-          onchange={(e) => setId(Math.round(Math.flour()) * 1000)}
+          onChange={(e) => setId(Math.round(Math.flour()) * 1000)}
         />
         <br />
         <label>Nome:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
           placeholder="Nome do produto"
           value={nome}
-          onchange={(e) => setNome(e.target.value)}
+          onChange={(e) => setNome(e.target.value)}
         />
         <br />
         <label>Fabricante:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
           placeholder="Fabricante"
           value={fabricante}
-          onchange={(e) => setFabricante(e.target.value)}
+          onChange={(e) => setFabricante(e.target.value)}
         />
         <br />
         <label>Quantidade:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
           mask="000.00"
           placeholder="Quantidade"
           value={quantidade}
-          onchange={(e) => setQuantidade(e.targe.value)}
+          onChange={(e) => setQuantidade(e.target.value)}
         />
         <br />
         <label>Preço:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
           mask="R$000,00"
           placeholder="Valor"
           value={preco}
-          onchange={(e) => setPreco(e.target.value)}
+          onChange={(e) => setPreco(e.target.value)}
         />
         <button className="btn" type="submit">
           Enviar

@@ -4,7 +4,7 @@ export default function Footer(){
     return(
         <div className="footer">
             <h1>
-                Footer
+                Lancheteria Da Lancha
             </h1>
         </div>
     )

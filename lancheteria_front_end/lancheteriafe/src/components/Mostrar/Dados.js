@@ -24,10 +24,13 @@ export default function ListarUsuarios() {
 
   return (
     <div >
-      <h1>Listar Dados De Usuario</h1>
+      <center>
+        <h1>Listar Dados De Usuario</h1>
+        </center>
       {usuarios.map((usuario) => {
 
         return(
+          <center>
 
         <article  className="dados" key={usuario.id}>
           <p>
@@ -44,6 +47,7 @@ export default function ListarUsuarios() {
           <br/>
           </p>
         </article>
+          </center>
         )
       })}
     </div>

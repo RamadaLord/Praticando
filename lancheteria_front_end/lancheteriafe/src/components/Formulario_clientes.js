@@ -69,7 +69,7 @@ function FormularioClientes() {
     <div id="formulario">
       <h1>Cadastro</h1>
       <form onSubmit={handleFormulario}>
-        <label>Cod</label>
+        <label>Cod:</label>
         <IMaskInput
           id="input"
           type="text"
@@ -80,7 +80,7 @@ function FormularioClientes() {
         />
         <br />
 
-        <label>Nome</label>
+        <label>Nome:</label>
         <IMaskInput
           id="input"
           type="text"
@@ -90,7 +90,7 @@ function FormularioClientes() {
         />
         <br />
 
-        <label>CPF</label>
+        <label>CPF:</label>
         <IMaskInput
           id="input"
           mask="000.000.000-00"
@@ -100,7 +100,7 @@ function FormularioClientes() {
         />
         <br />
 
-        <label>RG</label>
+        <label>RG:</label>
         <IMaskInput
           id="input"
           mask="00.000.00-00"
@@ -109,7 +109,7 @@ function FormularioClientes() {
           onChange={(e) => setRg(e.target.value)}
         />
         <br />
-        <label>Telefone Fixo</label>
+        <label>Telefone Fixo:</label>
         <IMaskInput
           id="input"
           mask="(00)0000-0000"
@@ -118,7 +118,7 @@ function FormularioClientes() {
           onChange={(e) => setTel_fixo(e.target.value)}
         />
         <br />
-        <label>Telefone Celular</label>
+        <label>Telefone Celular:</label>
         <IMaskInput
           id="input"
           mask="(00)00000-0000"
@@ -128,7 +128,7 @@ function FormularioClientes() {
         />
         <br />
 
-        <label>CEP</label>
+        <label>CEP:</label>
         <IMaskInput
           id="input"
           mask="00000-000"
@@ -138,7 +138,7 @@ function FormularioClientes() {
         />
         <br />
 
-        <label>Rua</label>
+        <label>Rua:</label>
         <IMaskInput
           id="input"
           type="text"
@@ -147,7 +147,7 @@ function FormularioClientes() {
           onChange={(e) => setRua(e.target.value)}
         />
         <br />
-        <label>Complemento</label>
+        <label>Complemento:</label>
         <IMaskInput
           id="input"
           placeholder="Digite o complemento"
@@ -155,7 +155,7 @@ function FormularioClientes() {
           onChange={(e) => setComp(e.target.value)}
         />
         <br />
-        <label>Bairro</label>
+        <label>Bairro:</label>
         <IMaskInput
           id="input"
           type="text"
@@ -164,7 +164,7 @@ function FormularioClientes() {
           onChange={(e) => setBairro(e.target.value)}
         />
         <br />
-        <label>Cidade</label>
+        <label>Cidade:</label>
         <IMaskInput
           id="input"
           type="text"
@@ -173,7 +173,7 @@ function FormularioClientes() {
           onChange={(e) => setCidade(e.target.value)}
         />
         <br />
-        <label>Estado</label>
+        <label>Estado:</label>
         <IMaskInput
           id="input"
           mask=""

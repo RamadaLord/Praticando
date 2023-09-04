@@ -23,10 +23,13 @@ export default function ListarClientes() {
 
   return (
     <div>
-      <h1>Clientes</h1>
+      
+      <h1>Clientes:</h1>
 
       {clientes.map((cliente) => {
         return (
+          <center>
+
           <article className="dados">
             <p>
               ID: {cliente.id}
@@ -51,11 +54,13 @@ export default function ListarClientes() {
               <br/>
                 estado:{cliente.estado}
                  <br/>
-            </p>
             <LuEdit  />
             <GiTrashCan onClick={()=>excluirCliente(cliente.id)}/>
+            </p>
+            <br/>
            
           </article>
+          </center>
         );
       })}
     </div>

@@ -5,6 +5,7 @@
 }
 
 .dados {
+    display: flex;
     width: 70%;
     align-items: center;
     flex-direction: row;
