@@ -18,8 +18,11 @@ export default function ListarUsuarios() {
   console.log(usuarios);
 
   async function excluirUsuario(id){
+
+    await apiBack.delete("/DeletarUsuario")
       alert(id)
       console.log(id)
+
   }
 
   return (

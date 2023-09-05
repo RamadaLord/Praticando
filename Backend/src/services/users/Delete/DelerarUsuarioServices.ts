@@ -1,18 +1,17 @@
 import prismaClient from "../../../../prisma";
 
 interface DeletarUsuario {
-  remover: string;
+  id: string;
 }
 
 class DeletarUsuarioServices {
-  async execute({ remover }: DeletarUsuario) {
-    const deleteUser = await prismaClient.user.delete({
+  async execute({ id }: DeletarUsuario) {
+     await prismaClient.user.delete({
       where: {
-        id: remover,
+        id: id,
       },
     });
-    console.log(deleteUser);
-    return deleteUser;
+    return {dados: 'Apagado com sucesso'};
   }
 }
 
