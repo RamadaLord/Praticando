@@ -4,10 +4,10 @@ import { Request, Response } from "express";
 
 class DeletarUsuarioController {
   async handle(req: Request, res: Response) {
-    const { id } = req.body;
+    const { remover } = req.body;
     const deletarUsuarioServices = new DeletarUsuarioServices();
     const apagar = await deletarUsuarioServices.execute({
-      id,
+      remover,
     });
     return res.json(apagar);
   }
