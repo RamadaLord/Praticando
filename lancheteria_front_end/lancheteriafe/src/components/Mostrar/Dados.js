@@ -19,7 +19,7 @@ export default function ListarUsuarios() {
 
   async function excluirUsuario(id){
 
-    await apiBack.delete('/DeletarUsuario/')
+    // await apiBack.delete('/DeletarUsuario/')
       alert(id)
       console.log(id)
 
