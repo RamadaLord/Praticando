@@ -9,12 +9,12 @@ class CriarUsuarioController {
       email,
       senha,
     });
-    return res.json(usuarios);
     if (nome === "" || email === "" || senha === "") {
       return res.json({ nome: nome });
     }
-
+    
     console.log(nome, email, senha);
+    return res.json(usuarios);
   }
 }
 

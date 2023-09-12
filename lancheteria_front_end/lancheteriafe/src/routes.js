@@ -6,7 +6,10 @@ import ListarUsuarios from "./components/Mostrar/Dados";
 import ListarClientes from "./components/Mostrar/DadosClientes";
 import ListarProdutos from "./components/Mostrar/DadosProdutos";
 import FormularioProdutos from "./components/Formulario_produtos";
+import AlterarCliente from "./components/Alterar/AlterarC";
 import Footer from "./components/footer/footer";
+import AlterarProduto from "./components/Alterar/AlterarP";
+import AlterarUsuario from "./components/Alterar/AlterarU";
 function Rotas() {
   return (
     <BrowserRouter>
@@ -19,6 +22,10 @@ function Rotas() {
         <Route path="/ListarUsuarios" element={< ListarUsuarios/>} />
         <Route path="/ListarClientes" element={< ListarClientes/>} />
         <Route path="/ListarProdutos" element={< ListarProdutos/>} />
+        {/*Editar*/}
+        <Route path='/AlterarCliente' element={<AlterarCliente/>}/>
+        <Route path='/AlterarProduto' element={<AlterarProduto/>} />
+        <Route path='/AlterarUsuario' element={<AlterarUsuario/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

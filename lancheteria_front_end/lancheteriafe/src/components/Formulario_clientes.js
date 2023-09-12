@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import apiBack from "../services/api";
 import "../css/formulario.css";
+import { toast } from "react-toastify";
 
 
 function FormularioClientes() {
@@ -38,16 +39,16 @@ function FormularioClientes() {
       return;
     }
 
-    alert(`Cliente: ${cod_cliente}
-        \nNome: ${nome}
-        \nTelefone Fixo: ${tel_fixo}
-        \nTelefone Celular: ${tel_cel}
-        \nRua: ${rua}
-        \nComplemento: ${complemento}
-        \nCEP: ${cep}
-        \nBairro: ${bairro}
-        \nCidade: ${cidade}
-        \nEstado: ${estado}`);
+    // alert(`Cliente: ${cod_cliente}
+    //     \nNome: ${nome}
+    //     \nTelefone Fixo: ${tel_fixo}
+    //     \nTelefone Celular: ${tel_cel}
+    //     \nRua: ${rua}
+    //     \nComplemento: ${complemento}
+    //     \nCEP: ${cep}
+    //     \nBairro: ${bairro}
+    //     \nCidade: ${cidade}
+    //     \nEstado: ${estado}`);
 
     await apiBack.post("/CriarClientes", {
       nome,
@@ -63,6 +64,10 @@ function FormularioClientes() {
     });
 
     navigate("/ListarClientes")
+
+    toast.success('Produto Cadastrado com sucesso.',{
+      position: toast.POSITION.TOP_LEFT
+    })
 
   }
   return (

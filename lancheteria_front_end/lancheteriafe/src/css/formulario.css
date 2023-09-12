@@ -10,7 +10,7 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: #d8d657;
-    padding:60px 0;
+    padding-top:15px ;
     color: #070707;
 
 }
@@ -33,6 +33,7 @@ body{
     background-color: #d8d657;
     padding:60px 0;
     font-size: 25px;
+    margin-left: 100px;
 }
 
 #input{

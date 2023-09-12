@@ -1,27 +1,46 @@
 /* eslint-disable array-callback-return */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { LuEdit } from 'react-icons/lu'
 import { GiTrashCan } from 'react-icons/gi'
-import apiBack from "../../services/api";
-import "../../css/dados.css";
+import apiBack from '../../services/api';
+import {toast } from 'react-toastify';
+import '../../css/dados.css';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 
 export default function ListarUsuarios() {
-  const [usuarios, setUsuarios] = useState([""]);
+  const [usuarios, setUsuarios] = useState(['']);
 
   useEffect(() => {
     async function listarUsuario() {
-      const resposta = await apiBack.get("/ListarUsuarios");
+      const resposta = await apiBack.get('/ListarUsuarios');
       setUsuarios(resposta.data);
     }
     listarUsuario();
-  }, []);
+  }, [usuarios]);
   console.log(usuarios);
+
+  async function editarUsuario(id){
+
+    toast.info(id,{
+      position:toast.POSITION.TOP_CENTER
+    })
+   
+  }
 
   async function excluirUsuario(id){
 
-    // await apiBack.delete('/DeletarUsuario/')
-      alert(id)
-      console.log(id)
+    await apiBack.delete('/DeletarUsuarios/',{
+      data:{
+        remover:id
+      }
+    })
+    toast.warning('Dados Apagados',{
+      position: toast.POSITION.TOP_RIGHT,
+      className: 'toast-message',
+      icon: "♲",
+    }
+    )
 
   }
 
@@ -30,23 +49,27 @@ export default function ListarUsuarios() {
       <center>
         <h1>Listar Dados De Usuario</h1>
         </center>
-      {usuarios.map((usuario) => {
+      {usuarios.map((resultado) => {
 
         return(
           <center>
 
-        <article  className="dados" key={usuario.id}>
+        <article  className='dados' key={resultado.id}>
           <p>
-            ID : {usuario.id}
+            ID : {resultado.id}
             <br/>
-            Nome: {usuario.nome}
+            Nome: {resultado.nome}
             <br/>
-            E-mail: {usuario.email}
+            E-mail: {resultado.email}
           <br/>
+          Senha Criptografada: {resultado.senha}
+            <h3>
           <center>
-          <LuEdit  />
-            <GiTrashCan onClick={()=> excluirUsuario(usuario.id)}/>
+
+          <LuEdit color='blue' onClick={()=> editarUsuario(resultado.id)} />
+            <GiTrashCan color='red' onClick={()=> excluirUsuario(resultado.id)}/>
             </center>
+          </h3>
           <br/>
           </p>
         </article>

@@ -1,5 +1,5 @@
 import prismaClient from "../../../prisma";
-import { DeletarUsuarioServices } from "../../services/users/Delete/DelerarUsuarioServices";
+import { DeletarUsuarioServices } from "../../services/Delete/DelerarUsuarioServices";
 import { Request, Response } from "express";
 
 class DeletarUsuarioController {

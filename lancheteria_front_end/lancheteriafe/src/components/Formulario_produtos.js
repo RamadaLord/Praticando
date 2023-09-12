@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiBack from "../services/api";
 import { IMaskInput } from "react-imask";
+
 import "../css/formulario.css";
+import { toast } from "react-toastify";
 
 export default function FormularioProdutos() {
   const navigate = useNavigate();
@@ -28,11 +30,11 @@ export default function FormularioProdutos() {
       return;
     }
 
-    alert(`Produtos: ${id}
-        \nNome:${nome} 
-        \nfabricante:${fabricante}
-        \nquantidade:${quantidade}
-        \npreco:${preco}`);
+    // alert(`Produtos: ${id}
+    //     \nNome:${nome} 
+    //     \nfabricante:${fabricante}
+    //     \nquantidade:${quantidade}
+    //     \npreco:${preco}`);
 
     await apiBack.post("/CriarProdutos", {
       id,
@@ -42,6 +44,11 @@ export default function FormularioProdutos() {
       preco,
     });
     navigate("/ListarProdutos");
+
+    toast.success('Produto Cadastrado com sucesso.',{
+      position: toast.POSITION.TOP_LEFT
+    })
+
   }
 
   return (
@@ -95,7 +102,7 @@ export default function FormularioProdutos() {
         <IMaskInput
           id="input"
           type="text"
-          mask="R$000,00"
+          mask="R$00,00"
           placeholder="Valor"
           value={preco}
           onChange={(e) => setPreco(e.target.value)}
