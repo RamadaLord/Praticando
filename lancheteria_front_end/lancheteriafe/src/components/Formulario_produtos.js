@@ -55,6 +55,7 @@ export default function FormularioProdutos() {
     <div id="formulario">
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleFormulario}>
+        <br/>
         <label>ID:</label>
         <br/>
         <IMaskInput

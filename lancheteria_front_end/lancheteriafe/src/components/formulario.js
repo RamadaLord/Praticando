@@ -43,6 +43,7 @@ function Formulario() {
         <br />
 
         <label>Email:</label>
+        <br/>
         <IMaskInput
           id='input'
           type='text'
@@ -52,6 +53,7 @@ function Formulario() {
         />
         <br />
         <label>Senha:</label>
+        <br/>
         <IMaskInput
           id='input'
           type='password'

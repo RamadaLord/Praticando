@@ -75,6 +75,7 @@ function FormularioClientes() {
       <h1>Cadastro</h1>
       <form onSubmit={handleFormulario}>
         <label>Cod:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
@@ -86,6 +87,7 @@ function FormularioClientes() {
         <br />
 
         <label>Nome:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
@@ -96,6 +98,7 @@ function FormularioClientes() {
         <br />
 
         <label>CPF:</label>
+        <br/>
         <IMaskInput
           id="input"
           mask="000.000.000-00"
@@ -106,6 +109,7 @@ function FormularioClientes() {
         <br />
 
         <label>RG:</label>
+        <br/>
         <IMaskInput
           id="input"
           mask="00.000.00-00"
@@ -115,6 +119,7 @@ function FormularioClientes() {
         />
         <br />
         <label>Telefone Fixo:</label>
+        <br/>
         <IMaskInput
           id="input"
           mask="(00)0000-0000"
@@ -124,6 +129,7 @@ function FormularioClientes() {
         />
         <br />
         <label>Telefone Celular:</label>
+        <br/>
         <IMaskInput
           id="input"
           mask="(00)00000-0000"
@@ -134,6 +140,7 @@ function FormularioClientes() {
         <br />
 
         <label>CEP:</label>
+        <br/>
         <IMaskInput
           id="input"
           mask="00000-000"
@@ -144,6 +151,7 @@ function FormularioClientes() {
         <br />
 
         <label>Rua:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
@@ -153,6 +161,7 @@ function FormularioClientes() {
         />
         <br />
         <label>Complemento:</label>
+        <br/>
         <IMaskInput
           id="input"
           placeholder="Digite o complemento"
@@ -161,6 +170,7 @@ function FormularioClientes() {
         />
         <br />
         <label>Bairro:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
@@ -170,6 +180,7 @@ function FormularioClientes() {
         />
         <br />
         <label>Cidade:</label>
+        <br/>
         <IMaskInput
           id="input"
           type="text"
@@ -179,6 +190,7 @@ function FormularioClientes() {
         />
         <br />
         <label>Estado:</label>
+        <br/>
         <IMaskInput
           id="input"
           mask=""

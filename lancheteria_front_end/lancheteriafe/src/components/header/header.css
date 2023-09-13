@@ -1,7 +1,7 @@
 .header{
     text-align: center;
     top: 0;
-    position: sticky;   
+    position:sticky ;   
     background: #d8d657;  
     width: 100%;
     z-index: 999px;

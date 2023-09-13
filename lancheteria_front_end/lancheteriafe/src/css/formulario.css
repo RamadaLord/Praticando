@@ -10,7 +10,8 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: #d8d657;
-    padding-top:15px ;
+    background-image: url('../img/lanchito.jpg');
+    padding-top:5px ;
     color: #070707;
 
 }
@@ -30,7 +31,7 @@ body{
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    background-color: #d8d657;
+    /* background-color: #d8d657; */
     padding:60px 0;
     font-size: 25px;
     margin-left: 100px;
@@ -70,3 +71,9 @@ body{
     transition: 0.75s all;
 }
 
+label{
+    border: solid red 2px;
+    background-color: #070707;
+    border-radius: 5px;
+    color:white;
+}
