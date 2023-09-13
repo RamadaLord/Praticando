@@ -2,19 +2,20 @@ import { application, Router } from 'express';
 import { ListarClientesController } from './controllers/Listar/ListarClientesController';
 import { CriarProdutosController } from './controllers/Produtos/CriarProdutosController';
 import { CriarClienteController } from './controllers/users/CriarClientesController';
-
 import { DeletarUsuarioController } from './controllers/Delete/DeleteUserController';
 import { CriarUsuarioController } from './controllers/users/CriarUsuarioController';
 import { ListarUsuariosController } from './controllers/Listar/ListarusuariosController';
 import { ListarProdutosController } from './controllers/Produtos/ListarProdutosController';
 import { DeletarProdutosC } from './controllers/Delete/DeletarProdutosController';
 import { DeletarClientesC } from './controllers/Delete/DeletarClientesController';
+import { ListarUsuarioUC } from './controllers/users/ListarUsuarioUnicoC';
 const router = Router();
 //Post
 //usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle);
-router.delete('/DeletarUsuarios', new DeletarUsuarioController().handle);
 router.get('/ListarUsuarios',new ListarUsuariosController().handle)
+router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUC().handle)
+router.delete('/DeletarUsuarios', new DeletarUsuarioController().handle);
 //clientes
 router.post('/CriarClientes', new CriarClienteController().handle);
 router.delete('/DeletarClientes', new DeletarClientesC().handle)

@@ -1,8 +1,9 @@
 /* eslint-disable array-callback-return */
 import React, { useEffect, useState } from 'react';
+import apiBack from '../../services/api';
+import { Link } from 'react-router-dom'
 import { LuEdit } from 'react-icons/lu'
 import { GiTrashCan } from 'react-icons/gi'
-import apiBack from '../../services/api';
 import {toast } from 'react-toastify';
 import '../../css/dados.css';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -20,13 +21,18 @@ export default function ListarUsuarios() {
   }, [usuarios]);
   console.log(usuarios);
 
-  async function editarUsuario(id){
-
-    toast.info(id,{
-      position:toast.POSITION.TOP_CENTER
-    })
+  // async function editarUsuario(id){
+  //    await apiBack.get('/ListarUsuario/',{
+  //     data:{
+  //       id
+  //     }
+      
+  //   })
+  //   toast.info(id,{
+  //     position:toast.POSITION.TOP_CENTER
+  //   })
    
-  }
+  // }
 
   async function excluirUsuario(id){
 
@@ -62,12 +68,11 @@ export default function ListarUsuarios() {
             <br/>
             E-mail: {resultado.email}
           <br/>
-          Senha Criptografada: {resultado.senha}
             <h3>
           <center>
 
-          <LuEdit color='blue' onClick={()=> editarUsuario(resultado.id)} />
-            <GiTrashCan color='red' onClick={()=> excluirUsuario(resultado.id)}/>
+          <Link to={`/AlterarUsuario/${resultado.id}`}><LuEdit className='btn2' color='blue'/></Link>
+            <GiTrashCan className='btn2' color='red' onClick={()=> excluirUsuario(resultado.id)}/>
             </center>
           </h3>
           <br/>

@@ -37,6 +37,16 @@
 
 .btn:hover{
     scale: 1.1;
-    transition: 1.75 all;
+    transition: 1.75s all;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.btn2:hover{
+    cursor: pointer;
+    transition: 0.75s all;
+    scale: 1.10;
 }
 

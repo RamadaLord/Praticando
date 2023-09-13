@@ -48,8 +48,8 @@ export default function ListarProdutos() {
                   <br />
                   Preço: {produto.preco}
                   <center>
-                    <LuEdit />
-                    <GiTrashCan color="red" onClick={() => excluirProdutos(produto.id)} />
+                    <LuEdit className="btn2" />
+                    <GiTrashCan className="btn2" color="red" onClick={() => excluirProdutos(produto.id)} />
                   </center>
                 </p>
                 <br />

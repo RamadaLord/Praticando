@@ -23,9 +23,9 @@ function Rotas() {
         <Route path="/ListarClientes" element={< ListarClientes/>} />
         <Route path="/ListarProdutos" element={< ListarProdutos/>} />
         {/*Editar*/}
-        <Route path='/AlterarCliente' element={<AlterarCliente/>}/>
-        <Route path='/AlterarProduto' element={<AlterarProduto/>} />
-        <Route path='/AlterarUsuario' element={<AlterarUsuario/>} />
+        <Route path='/AlterarCliente/:id' element={<AlterarCliente/>}/>
+        <Route path='/AlterarProduto/:id' element={<AlterarProduto/>} />
+        <Route path='/AlterarUsuario/:id' element={<AlterarUsuario/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

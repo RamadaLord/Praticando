@@ -63,8 +63,8 @@ export default function ListarClientes() {
                 <br />
                 estado:{resultado.estado}
                 <br />
-                <LuEdit />
-                <GiTrashCan color='red' onClick={() => excluirCliente(resultado.id)} />
+                <LuEdit className='btn2' />
+                <GiTrashCan className='btn2' color='red' onClick={() => excluirCliente(resultado.id)} />
               </p>
               <br />
             </article>
