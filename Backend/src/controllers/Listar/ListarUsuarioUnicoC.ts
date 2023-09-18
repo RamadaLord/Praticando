@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ListarUsuarioUS } from "../../services/users/ListarUsuarioUS";
+import { ListarUsuarioUS } from "../../services/users/Listar/ListarUsuarioUS";
 
 class ListarUsuarioUC {
   async handle(req: Request, res: Response) {

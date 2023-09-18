@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 export default function AlterarUsuario() {
   const { id } = useParams();
   const [listaUsuario, setListaUsuario] = useState('');
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
+  const [alteraNome, setAlteraNome] = useState('');
+  const [alteraEmail, setAlteraEmail] = useState('');
 
 
   useEffect(() => {
@@ -18,39 +18,47 @@ export default function AlterarUsuario() {
   }, []);
 
   useEffect(()=>{
-    setNome(listaUsuario.nome)
-    setEmail(listaUsuario.email)
+    setAlteraNome(listaUsuario.nome)
+    setAlteraEmail(listaUsuario.email)
   },[listaUsuario])
+
+  async function AlteraUsuario(e){
+    e.preventDefault()
+    const resposta = await apiBack.put('/AlteraUsuario',{
+      id,
+      alteraNome,
+      alteraEmail
+    })
+    console.log(resposta)
+  }
 
   return (
     <div className='formulario'>
       <h1>Alterar Usuario</h1>
       <center>
-        <form>
+        <form onSubmit={AlteraUsuario} >
           <label>Nome</label>
           <br />
           <input
-           placeholder={listaUsuario.nome}
-            value={nome}
-            onChange={(e)=> setNome(e.target.nome)}
+            value={alteraNome}
+            onChange={(e)=> setAlteraNome(e.target.alteraNome)}
            />
           <br />
           <br />
           <label>Email</label>
           <br />
           <input
-           placeholder={listaUsuario.email}
-            value={email}
-            onChange={(e)=> setEmail(e.target.email)}
+            value={alteraEmail}
+            onChange={(e)=> setAlteraEmail(e.target.alteraEmail)}
 
            />
           <br />
-        </form>
-        <br />
+      <br/>
         <button type='submit'>Enviar</button>
+        <br />
+        </form>
         <br/>
       </center>
-      <br/>
     </div>
   );
 }

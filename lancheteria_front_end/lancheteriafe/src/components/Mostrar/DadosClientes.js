@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import apiBack from '../../services/api';
 import '../../css/dados.css';
 import 'react-toastify/dist/ReactToastify.min.css';
+import { Link } from 'react-router-dom';
 
 export default function ListarClientes() {
   const [clientes, setClientes] = useState(['']);
@@ -63,7 +64,7 @@ export default function ListarClientes() {
                 <br />
                 estado:{resultado.estado}
                 <br />
-                <LuEdit className='btn2' />
+                <Link to={`/AlterarCliente/${resultado.id}`} ><LuEdit className='btn2' /></Link>
                 <GiTrashCan className='btn2' color='red' onClick={() => excluirCliente(resultado.id)} />
               </p>
               <br />
