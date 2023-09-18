@@ -7,7 +7,10 @@ export default function Footer(){
             <h1>
                 Lancheteria Da Lancha
             </h1>
-        <img className='img' src={img} alt={img} />
+            <h2>
+                <p>Localização</p>
+            </h2>
+        <img className='img2' src={img} alt={img} />
         </div>
     )
 }
