@@ -13,6 +13,7 @@ import { AlterarUsuarioC } from './controllers/Altera/AlteraController';
 import { AlteraClienteC } from './controllers/Altera/AlteraClienteC';
 import { AlteraProdutosC } from './controllers/Altera/AlteraProdutosC';
 import { ListarPUC } from './controllers/Listar/ListarProdutosUnicoS';
+import { ListarCUC } from './controllers/Listar/ListarClienteUnicoC';
 const router = Router();
 //Post
 //usuarios
@@ -26,7 +27,7 @@ router.post('/CriarClientes', new CriarClienteController().handle);
 router.put('/AlteraCliente', new AlteraClienteC().handle)
 router.delete('/DeletarClientes', new DeletarClientesC().handle)
 router.get('/ListarClientes', new ListarClientesController().handle);
-router.get('/ListarClienteUnico/:id', new ListarUsuarioUC().handle)
+router.get('/ListarClienteUnico/:id', new ListarCUC().handle)
 //Produtos
 router.post('/CriarProdutos', new CriarProdutosController().handle);
 router.put('/AlteraProduto', new AlteraProdutosC().handle)

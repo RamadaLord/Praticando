@@ -16,6 +16,6 @@ export class ListarPUS {
         preco: true,
       },
     });
-    return resposta
+    return resposta;
   }
 }

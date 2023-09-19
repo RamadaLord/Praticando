@@ -17,7 +17,7 @@ function Rotas() {
       <Routes>
         <Route path="/Login" element={<Formulario />} />
         <Route path="/FormularioClientes" element={<FormularioClientes />} />
-        <Route path="FormularioProdutos" element={<FormularioProdutos/>} />
+        <Route path="/FormularioProdutos" element={<FormularioProdutos/>} />
         {/* Listar */}
         <Route path="/ListarUsuarios" element={< ListarUsuarios/>} />
         <Route path="/ListarClientes" element={< ListarClientes/>} />
