@@ -10,12 +10,14 @@ import AlterarCliente from "./components/Alterar/AlterarC";
 import Footer from "./components/footer/footer";
 import AlterarProduto from "./components/Alterar/AlterarP";
 import AlterarUsuario from "./components/Alterar/AlterarU";
+import LogIn from "./components/LogIn/LogIn";
 function Rotas() {
   return (
     <BrowserRouter>
     <Header/>
       <Routes>
-        <Route path="/Login" element={<Formulario />} />
+        <Route path="/LogIn" element={<LogIn/>} />
+        <Route path="/CadastroUsuario" element={<Formulario />} />
         <Route path="/FormularioClientes" element={<FormularioClientes />} />
         <Route path="/FormularioProdutos" element={<FormularioProdutos/>} />
         {/* Listar */}

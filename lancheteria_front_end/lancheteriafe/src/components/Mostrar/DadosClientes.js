@@ -34,8 +34,10 @@ export default function ListarClientes() {
   }
 
   return (
-    <div>
+    <div><center>
+      
       <h1>Clientes:</h1>
+    </center>
 
       {clientes.map((resultado) => {
         return (
@@ -69,6 +71,7 @@ export default function ListarClientes() {
               </p>
               <br />
             </article>
+            <br/>
           </center>
         );
       })}

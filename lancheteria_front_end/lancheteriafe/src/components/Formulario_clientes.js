@@ -140,14 +140,14 @@ function FormularioClientes() {
         <br />
 
         <label>CEP:</label>
-        <br/>
+        {/* <br/>
         <IMaskInput
           id="input"
           mask="00000-000"
           placeholder="xxxxx-xxxx"
           value={cep}
           onChange={(e) => setCep(e.target.value)}
-        />
+        /> */}
         <br />
 
         <label>Rua:</label>

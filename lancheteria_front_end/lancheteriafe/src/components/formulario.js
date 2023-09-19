@@ -29,7 +29,7 @@ function Formulario() {
   }
   return (
     <div id='formulario'>
-      <h1>Login: </h1>
+      <h1>Cadastro De Usuario Novo: </h1>
       <br/>
       <form onSubmit={handleFormulario}>
         <label>Nome De Usuario:</label>

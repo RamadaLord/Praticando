@@ -8,9 +8,14 @@ export default function Header (){
     return(
         <div className="header">
       <img src={img} alt={img} className="img" />
+      <br/>
+      <h1>
+
+      <Link to='/Login' >LogIn</Link>
+      </h1>
         <h1>
         
-        <Link to="/Login"> Login /</Link>
+        <Link to="/CadastroUsuario"> Usuario /</Link>
         <Link to="/FormularioClientes"> Cliente </Link>
         {/* <Link to="/FormularioUsuario"> Usuario </Link> */}
         <Link to="/FormularioProdutos">/ Produtos </Link>

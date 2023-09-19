@@ -42,7 +42,7 @@ export default function AlterarProduto(){
 }
    
     return(
-        <div className="formulario">
+        <div id="formulario">
             <h1>
                 Alterar Produtos
             </h1>
@@ -52,6 +52,7 @@ export default function AlterarProduto(){
                     <br/>
                     <input 
                     value={alteraNome}
+                    id="input"
                     onChange={(e)=> setAlteraNome(e.target.value)}
                     />
                     <br/>
@@ -61,6 +62,7 @@ export default function AlterarProduto(){
                     <br/>
                     <input
                     value={alteraFabricante}
+                    id="input"
                     onChange={(e)=> setAlteraFabricante(e.target.value)}
                     />
                     <br/>
@@ -70,6 +72,7 @@ export default function AlterarProduto(){
                     <br/>
                     <input
                     value={alteraQuantidade}
+                    id="input"
                     onChange={(e)=> setAlteraQuantidade(e.target.value)}
                     />
                     <br/>
@@ -79,10 +82,11 @@ export default function AlterarProduto(){
                     <br/>
                     <input
                     value={alteraPreco}
+                    id="input"
                     onChange={(e)=> setAlteraPreco(e.target.value)}
                     />
                     <br/>
-                    <button type="submit">Enviar</button>
+                    <button className="btn" type="submit">Enviar</button>
                 </form>
             </center>
         </div>

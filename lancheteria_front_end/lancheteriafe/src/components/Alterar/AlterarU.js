@@ -37,7 +37,7 @@ export default function AlterarUsuario() {
   }
 
   return (
-    <div className="formulario">
+    <div id="formulario">
       <h1>Alterar Usuario</h1>
       <center>
         <form onSubmit={AlteraUsuario}>
@@ -45,6 +45,7 @@ export default function AlterarUsuario() {
           <br />
           <input
             value={alteraNome}
+            id="input"
             onChange={(e) => setAlteraNome(e.target.value)}
           />
           <br />
@@ -53,11 +54,12 @@ export default function AlterarUsuario() {
           <br />
           <input
             value={alteraEmail}
+            id="input"
             onChange={(e) => setAlteraEmail(e.target.value)}
           />
           <br />
           <br />
-          <button type="submit" >Enviar</button>
+          <button className="btn" type="submit" >Enviar</button>
           <br />
         </form>
         <br />

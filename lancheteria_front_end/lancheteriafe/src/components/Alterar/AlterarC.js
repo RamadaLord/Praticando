@@ -60,7 +60,7 @@ export default function AlterarCliente() {
   }
 
   return (
-    <div className="formulario">
+    <div id="formulario">
       <center>
         <h1>Alterar Cliente</h1>
         <form onSubmit={AlteraCliente}>
@@ -68,6 +68,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraNome}
+            id='input'
             onChange={(e) => setAlteraNome(e.target.value)}
           />
           <br />
@@ -75,6 +76,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraCpf_Cnpj}
+            id='input'
             onChange={(e) => setAlteraCpf_Cnpj(e.target.value)}
           />
           <br />
@@ -82,6 +84,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraRg_Ie}
+            id='input'
             onChange={(e) => setAlteraRg_Ie(e.target.value)}
           />
           <br />
@@ -89,6 +92,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraFixo}
+            id='input'
             onChange={(e) => setAlteraFixo(e.target.value)}
           />
           <br />
@@ -96,6 +100,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraCel}
+            id='input'
             onChange={(e) => setAlteraCel(e.target.value)}
           />
           <br />
@@ -104,6 +109,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraRua}
+            id='input'
             onChange={(e) => setAlteraRua(e.target.value)}
           />
           <br />
@@ -111,6 +117,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraBairro}
+            id='input'
             onChange={(e) => setAlteraBairro(e.target.value)}
           />
           <br />
@@ -118,6 +125,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraComplemento}
+            id='input'
             onChange={(e) => setAlteraComplemento(e.target.value)}
           />
           <br />
@@ -125,6 +133,7 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraCidade}
+            id='input'
             onChange={(e) => setAlteraCidade(e.target.value)}
           />
           <br />
@@ -132,12 +141,13 @@ export default function AlterarCliente() {
           <br />
           <input
             value={alteraEstado}
+            id='input'
             onChange={(e) => setAlteraEstado(e.target.value)}
           />
 
           <br />
           <br />
-          <button type="submit">Enviar</button>
+          <button className='btn' type="submit">Enviar</button>
           <br />
         </form>
         <br />
