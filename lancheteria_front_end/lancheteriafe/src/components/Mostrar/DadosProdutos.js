@@ -24,7 +24,7 @@ export default function ListarProdutos() {
       },
     });
     toast.error('Dados Apagados!',{
-      position: toast.POSITION.TOP_LEFT
+      position: toast.POSITION.TOP_RIGHT
     })
   }
 

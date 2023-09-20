@@ -14,8 +14,10 @@ import { AlteraClienteC } from './controllers/Altera/AlteraClienteC';
 import { AlteraProdutosC } from './controllers/Altera/AlteraProdutosC';
 import { ListarPUC } from './controllers/Listar/ListarProdutosUnicoS';
 import { ListarCUC } from './controllers/Listar/ListarClienteUnicoC';
+import { DadosDeUsuarioC } from './controllers/login/LogInController';
 const router = Router();
-//Post
+//Login
+router.post('/AuthLogIn', new DadosDeUsuarioC().handle)
 //usuarios
 router.post('/CriarUsuarios', new CriarUsuarioController().handle);
 router.get('/ListarUsuarios',new ListarUsuariosController().handle)

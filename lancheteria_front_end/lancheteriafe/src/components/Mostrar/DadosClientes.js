@@ -26,7 +26,7 @@ export default function ListarClientes() {
       },
     });
     toast.error('Dados Apagados!',{
-      position: toast.POSITION.TOP_LEFT,
+      position: toast.POSITION.TOP_RIGHT,
       className:'toast-message'
 
     }

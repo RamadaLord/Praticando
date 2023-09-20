@@ -22,7 +22,7 @@ function Formulario() {
 
     navigate('/ListarUsuarios')
 
-    toast.success('Login Bem Succedido',{
+    toast.success('Login Bem Sucedido',{
       position:toast.POSITION.TOP_LEFT
     })
 
