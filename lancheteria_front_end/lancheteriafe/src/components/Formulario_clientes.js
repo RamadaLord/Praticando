@@ -16,7 +16,7 @@ function FormularioClientes() {
   const [rg_ie, setRg] = useState("");
   const [tel_fixo, setTel_fixo] = useState("");
   const [tel_cel, setTel_cel] = useState("");
-  const [cep, setCep] = useState("");
+  // const [cep, setCep] = useState("");
   const [rua, setRua] = useState("");
   const [complemento, setComp] = useState("");
   const [bairro, setBairro] = useState("");
@@ -199,9 +199,12 @@ function FormularioClientes() {
           onChange={(e) => setUf(e.target.value)}
         />
         <br />
+        <center>
+
         <button className="btn" type="submit">
           Enviar
         </button>
+        </center>
       </form>
     </div>
   );

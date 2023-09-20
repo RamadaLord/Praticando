@@ -1,7 +1,11 @@
-.footer{
+.footer {
     width: 100%;
-    height: 150px;
+    height: 250px;
     background-color: brown;
     text-align: center;
 }
 
+.map {
+    width:"600";
+    height:"450";
+}

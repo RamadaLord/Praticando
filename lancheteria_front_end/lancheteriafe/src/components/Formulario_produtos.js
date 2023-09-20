@@ -108,9 +108,12 @@ export default function FormularioProdutos() {
           value={preco}
           onChange={(e) => setPreco(e.target.value)}
         />
+        <center>
+
         <button className="btn" type="submit">
           Enviar
         </button>
+        </center>
       </form>
     </div>
   );

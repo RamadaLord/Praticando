@@ -3,16 +3,18 @@ import { IMaskInput } from "react-imask";
 export default function LogIn(){
     return(
         <div>
+            <form id="formulario">
             <h1>
-                Login
+                Login:
             </h1>
             <br/>
-            <form id="formulario">
                 <label>
                     Email:
                 </label>
                 <IMaskInput
                 id='input'
+                type='email'
+                placeholder='seu@email.com'
                 />
                 <br/>
                 <label>
@@ -20,6 +22,8 @@ export default function LogIn(){
                 </label>
                 <IMaskInput
                 id='input'
+                type='password'
+                placeholder='**********'
                 />
                 <br/>
                 <center>

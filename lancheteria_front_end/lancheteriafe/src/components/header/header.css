@@ -4,7 +4,7 @@
     position:sticky ;   
     background: #d8d657;  
     width: 100%;
-    z-index: 999px;
+    z-index: +99999999999px;
     /* box-shadow: 2px 5px 6px 3px rgba(0, 0, 0, 0.5); */
 }
 

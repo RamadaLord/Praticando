@@ -61,9 +61,12 @@ function Formulario() {
           value={senha}
           onChange={(e)=>setSenha(e.target.value)}
         />
+        <center>
+
         <button className='btn' type='submit'>
           Enviar
         </button>
+        </center>
       </form>
     </div>
   );
