@@ -8,32 +8,35 @@ import { useNavigate } from 'react-router-dom'
 export default function LogIn(){
 
     const [email, setEmail] = useState('')
-    const [senha, setSenha] =   useState('')
+    const [password, setPassword] =   useState('')
     const navigate = useNavigate()
 
-    async function EnviarDados(e){
+    async function AuthLogIn(e){
         e.preventDefault()
-        if(!email||!senha){
+        if(!email||!password){
             toast.warn('Existem campos em braco')
             return
         }
        try{
-        await apiBack.post('/AuthLogIn',{
+         await apiBack.post('/AuthLogIn',{
             email,
-            senha
+            password
+        })
+        toast.success('Login efetuado com sucesso',{
+         position: toast.POSITION.TOP_LEFT
         })
         navigate('/ListarUsuarios')
-        toast.error(Response.data.dados)
-        console.log(email, senha)
+        console.log(email, password)
        }catch(err){
-        toast.error(err.Response.data.dados)
+        toast.error(err.response.data.error)
 
        }
+
     }
 
     return(
         <div  id="formulario">
-            <form onSubmit={EnviarDados} >
+            <form onSubmit={AuthLogIn} >
             <h1>
                 Login:
             </h1>
@@ -43,7 +46,7 @@ export default function LogIn(){
                 </label>
                 <IMaskInput
                 id='input'
-                type='email'
+                type='text'
                 value={email}
                 placeholder='seu@email.com'
                 onChange={(e) => setEmail(e.target.value)}
@@ -55,9 +58,9 @@ export default function LogIn(){
                 <IMaskInput
                 id='input'
                 type='password'
-                value={senha}
+                value={password}
                 placeholder='**********'
-                onChange={(e)=> setSenha(e.target.value)}
+                onChange={(e)=> setPassword(e.target.value)}
                 />
                 <br/>
                 <center>
