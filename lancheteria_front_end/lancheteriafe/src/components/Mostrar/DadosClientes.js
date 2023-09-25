@@ -56,6 +56,8 @@ export default function ListarClientes() {
                 <br />
                 Telefone:{resultado.tel_fixo}
                 <br />
+                CEP:{resultado.cep}
+                <br />
                 Rua:{resultado.rua}
                 <br />
                 Complemento:{resultado.complemento}

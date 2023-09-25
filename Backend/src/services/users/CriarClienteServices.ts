@@ -6,6 +6,7 @@ interface CriarClientes {
   rg_ie: string;
   tel_cel: string;
   tel_fixo: string;
+  cep: string
   rua: string;
   complemento: string;
   bairro: string;
@@ -20,6 +21,7 @@ class CriarClienteServices {
     rg_ie,
     tel_cel,
     tel_fixo,
+    cep,
     rua,
     complemento,
     bairro,
@@ -31,6 +33,7 @@ class CriarClienteServices {
       !cpf_cnpj ||
       !rg_ie ||
       !tel_cel ||
+      !cep ||
       !rua ||
       !bairro ||
       !cidade ||
@@ -64,6 +67,7 @@ class CriarClienteServices {
         rg_ie: rg_ie,
         tel_cel: tel_cel,
         tel_fixo: tel_fixo,
+        cep : cep,
         rua: rua,
         complemento: complemento,
         bairro: bairro,
@@ -77,6 +81,7 @@ class CriarClienteServices {
         rg_ie: true,
         tel_cel: true,
         tel_fixo: true,
+        cep: true,
         rua: true,
         complemento: true,
         bairro: true,

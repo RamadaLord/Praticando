@@ -28,6 +28,7 @@ model Clientes {
   rg_ie       String
   tel_cel     String
   tel_fixo    String
+  cep         String
   rua         String
   complemento String
   bairro      String
@@ -39,14 +40,14 @@ model Clientes {
   @@map("clientes")
 }
 
-model Produtos{
-  id String @id @default(uuid())
-  nome String
+model Produtos {
+  id         String    @id @default(uuid())
+  nome       String
   fabricante String
   quantidade String
-  preco String
-  create_at DateTime? @default(now())
-  update_at DateTime? @default(now())
-  
+  preco      String
+  create_at  DateTime? @default(now())
+  update_at  DateTime? @default(now())
+
   @@map("produtos")
 }

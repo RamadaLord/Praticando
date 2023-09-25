@@ -16,7 +16,7 @@ function FormularioClientes() {
   const [rg_ie, setRg] = useState("");
   const [tel_fixo, setTel_fixo] = useState("");
   const [tel_cel, setTel_cel] = useState("");
-  // const [cep, setCep] = useState("");
+  const [cep, setCep] = useState("");
   const [rua, setRua] = useState("");
   const [complemento, setComp] = useState("");
   const [bairro, setBairro] = useState("");
@@ -56,6 +56,7 @@ function FormularioClientes() {
       rg_ie,
       tel_cel,
       tel_fixo,
+      cep,
       rua,
       complemento,
       bairro,
@@ -140,14 +141,14 @@ function FormularioClientes() {
         <br />
 
         <label>CEP:</label>
-        {/* <br/>
+        <br/>
         <IMaskInput
           id="input"
           mask="00000-000"
           placeholder="xxxxx-xxxx"
           value={cep}
           onChange={(e) => setCep(e.target.value)}
-        /> */}
+        />
         <br />
 
         <label>Rua:</label>

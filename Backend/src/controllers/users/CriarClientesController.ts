@@ -9,6 +9,7 @@ class CriarClienteController {
       rg_ie,
       tel_cel,
       tel_fixo,
+      cep,
       rua,
       complemento,
       bairro,
@@ -21,6 +22,7 @@ class CriarClienteController {
       rg_ie,
       tel_cel,
       tel_fixo,
+      cep,
       rua,
       complemento,
       bairro,
@@ -34,6 +36,7 @@ class CriarClienteController {
       rg_ie,
       tel_cel,
       tel_fixo,
+      cep,
       rua,
       complemento,
       bairro,
@@ -47,6 +50,7 @@ class CriarClienteController {
       rg_ie === "" ||
       tel_cel === "" ||
       tel_fixo === "" ||
+      cep === ""||
       rua === "" ||
       complemento === "" ||
       bairro === "" ||
@@ -62,6 +66,7 @@ class CriarClienteController {
       rg_ie,
       tel_cel,
       tel_fixo,
+      cep,
       rua,
       complemento,
       bairro,
