@@ -1,4 +1,7 @@
 import { application, Router } from 'express';
+import multer from 'multer';
+import uploadConfig from './config/multer'
+
 import { ListarClientesController } from './controllers/Listar/ListarClientesController';
 import { CriarProdutosController } from './controllers/Produtos/CriarProdutosController';
 import { CriarClienteController } from './controllers/users/CriarClientesController';
@@ -16,28 +19,32 @@ import { ListarPUC } from './controllers/Listar/ListarProdutosUnicoS';
 import { ListarCUC } from './controllers/Listar/ListarClienteUnicoC';
 import { AuthUsuarioController } from './controllers/login/AuthUsuarioController';
 
+//-------Constantes-------//
 const router = Router();
-//Login
+const upload = multer(uploadConfig.upload('../tmp'))
+//-------Login-------//
 router.post('/AuthLogIn', new AuthUsuarioController().handle)
-//usuarios
+//-------usuarios-------//
 router.post('/CriarUsuarios', new CriarUsuarioController().handle);
 router.get('/ListarUsuarios',new ListarUsuariosController().handle)
 router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUC().handle)
 router.put('/AlteraUsuario', new AlterarUsuarioC().handle)
 router.delete('/DeletarUsuarios', new DeletarUsuarioController().handle);
-//clientes
+//-------clientes-------//
 router.post('/CriarClientes', new CriarClienteController().handle);
 router.put('/AlteraCliente', new AlteraClienteC().handle)
 router.delete('/DeletarClientes', new DeletarClientesC().handle)
 router.get('/ListarClientes', new ListarClientesController().handle);
 router.get('/ListarClienteUnico/:id', new ListarCUC().handle)
-//Produtos
-router.post('/CriarProdutos', new CriarProdutosController().handle);
+//-------Produtos-------//
+router.post('/CriarProdutos', upload.single('file'), new CriarProdutosController().handle)
 router.put('/AlteraProduto', new AlteraProdutosC().handle)
 router.delete('/DeletarProdutos', new DeletarProdutosC().handle)
 router.get('/ListarProdutos', new ListarProdutosController().handle)
 router.get('/ListarProdutoUnico/:id', new ListarPUC().handle)
+
 //----------//
 
+//-----Upload de arquivos-----//
 
 export { router };

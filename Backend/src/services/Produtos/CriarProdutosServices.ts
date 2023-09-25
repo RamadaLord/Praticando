@@ -4,16 +4,18 @@ interface CriarProdutos {
   nome: string;
   fabricante: string;
   quantidade: string;
+  banner: string
   preco: string;
 }
 
 class CriarProdutosServices {
-  async excecute({ nome, fabricante, quantidade, preco }: CriarProdutos) {
+  async excecute({ nome, fabricante, quantidade, banner, preco }: CriarProdutos) {
     const produtos = await prismaClient.produtos.create({
       data: {
         nome: nome,
         fabricante: fabricante,
         quantidade: quantidade,
+        banner: banner,
         preco: preco,
       },
       select: {
@@ -21,6 +23,7 @@ class CriarProdutosServices {
         nome: true,
         fabricante: true,
         quantidade: true,
+        banner:true,
         preco: true,
       },
     });

@@ -36,6 +36,7 @@ CREATE TABLE `produtos` (
     `nome` VARCHAR(191) NOT NULL,
     `fabricante` VARCHAR(191) NOT NULL,
     `quantidade` VARCHAR(191) NOT NULL,
+    `banner` VARCHAR(191) NOT NULL,
     `preco` VARCHAR(191) NOT NULL,
     `create_at` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
     `update_at` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),

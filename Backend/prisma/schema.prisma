@@ -45,6 +45,7 @@ model Produtos {
   nome       String
   fabricante String
   quantidade String
+  banner     String
   preco      String
   create_at  DateTime? @default(now())
   update_at  DateTime? @default(now())
