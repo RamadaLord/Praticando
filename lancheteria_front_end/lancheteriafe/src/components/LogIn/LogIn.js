@@ -22,8 +22,9 @@ export default function LogIn(){
             email,
             password
         })
-        toast.success('Login efetuado com sucesso',{
-         position: toast.POSITION.TOP_LEFT
+        toast('Login efetuado com sucesso',{
+         position: toast.POSITION.TOP_CENTER,
+         theme: "light"
         })
         navigate('/ListarUsuarios')
         console.log(email, password)
