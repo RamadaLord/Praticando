@@ -4,11 +4,11 @@ import { CriarProdutosServices } from "../../services/Produtos/CriarProdutosServ
 class CriarProdutosController {
   async handle(req: Request, res: Response) {
     const { nome, fabricante, quantidade, preco } = req.body;
-    console.log(nome, fabricante, quantidade, preco);
+    // console.log(nome, fabricante, quantidade, preco);
     if (!req.file) {
       throw new Error("Imgem com problema");
     } else {
-      const { originalname, filename: banner } = req.body;
+      const { originalname, filename: banner } = req.file;
 
       const criarProdutosServices = new CriarProdutosServices();
       const produtos = await criarProdutosServices.excecute({
