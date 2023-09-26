@@ -21,7 +21,7 @@ import { AuthUsuarioController } from './controllers/login/AuthUsuarioController
 
 //-------Constantes-------//
 const router = Router();
-const upload = multer(uploadConfig.upload('../tmp'))
+const upload = multer(uploadConfig.upload('./tmp'))
 //-------Login-------//
 router.post('/AuthLogIn', new AuthUsuarioController().handle)
 //-------usuarios-------//

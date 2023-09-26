@@ -5,7 +5,9 @@ import { extname, resolve } from 'path'
 
 export default {
     upload (folder:string){
+        //Folder pode ser qualquer outro nome
         return{
+            //{ Bloco de codigos }
             storage: multer.diskStorage({
                 destination: resolve(__dirname,'..','..', folder),
                 filename:(request, file,callback) => {
