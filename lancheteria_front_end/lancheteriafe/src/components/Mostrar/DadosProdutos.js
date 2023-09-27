@@ -39,13 +39,13 @@ export default function ListarProdutos() {
             <center>
               <article className="dados" key={produto.id}>
                 <p>
-                  id:{produto.id}
+                  {/* id:{produto.id} */}
+                  Nome: {produto.nome}
                   <br />
                   <img className="img2"
                   src={`http://localhost:3333/files/${produto.banner}`}
                   alt={produto.banner}/>
-                  <br/>
-                  Nome: {produto.nome}
+                  {/* <br/> */}
                   <br />
                   Fabricante: {produto.fabricante}
                   <br />
