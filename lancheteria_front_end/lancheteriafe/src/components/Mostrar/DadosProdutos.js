@@ -41,6 +41,10 @@ export default function ListarProdutos() {
                 <p>
                   id:{produto.id}
                   <br />
+                  <img className="img2"
+                  src={`http://localhost:3333/files/${produto.banner}`}
+                  alt={produto.banner}/>
+                  <br/>
                   Nome: {produto.nome}
                   <br />
                   Fabricante: {produto.fabricante}

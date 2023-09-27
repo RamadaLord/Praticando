@@ -1,16 +1,18 @@
-.img{
+.img {
     width: 200px;
-    mix-blend-mode: color-dodge ;
+    mix-blend-mode: color-dodge;
 }
 
-.img2{
-    width: 900px;
-    height: 50px;
+.img2 {
+    width: 250px;
+    height: 150px;
     margin: 10px;
+    /* mix-blend-mode: darken; */
+    image-rendering: auto;
     transition: 0.5s all;
 }
 
-.bot{
+.bot {
     background: none;
     border: none;
 }
