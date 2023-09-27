@@ -39,17 +39,6 @@ function FormularioClientes() {
       return;
     }
 
-    // alert(`Cliente: ${cod_cliente}
-    //     \nNome: ${nome}
-    //     \nTelefone Fixo: ${tel_fixo}
-    //     \nTelefone Celular: ${tel_cel}
-    //     \nRua: ${rua}
-    //     \nComplemento: ${complemento}
-    //     \nCEP: ${cep}
-    //     \nBairro: ${bairro}
-    //     \nCidade: ${cidade}
-    //     \nEstado: ${estado}`);
-
     await apiBack.post("/CriarClientes", {
       nome,
       cpf_cnpj,
