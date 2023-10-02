@@ -59,11 +59,12 @@ export default function FormularioProdutos() {
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleFormulario}>
         <br />
+        <center>
         <label>Categoria:</label>
         <br />
-        {categorias.map((retorno) => {
-          return <div>{retorno.nome}</div>;
-        })}
+
+        
+        </center>
         <br />
         <label>ID:</label>
         <br />
