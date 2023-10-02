@@ -9,19 +9,11 @@ import { toast } from "react-toastify";
 export default function FormularioProdutos() {
   const navigate = useNavigate();
 
-  const [id, setId] = useState("");
   const [nome, setNome] = useState("");
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
   const [categorias, setCategorias] = useState("");
-
-  useEffect(() => {
-    function idProdutos() {
-      setId(Math.round(Math.random() * 1000));
-    }
-    idProdutos();
-  }, []);
 
   useEffect(() => {
     async function mostrarCategoria() {
@@ -40,7 +32,6 @@ export default function FormularioProdutos() {
     }
 
     await apiBack.post("/CriarProdutos", {
-      id,
       nome,
       fabricante,
       quantidade,
@@ -63,19 +54,17 @@ export default function FormularioProdutos() {
         <label>Categoria:</label>
         <br />
 
+        <select>
+          {categorias.map((retorno)=>{
+            return(
+              <option>{retorno.nome}</option>
+            )
+          })}
+        </select>
         
         </center>
         <br />
         <label>ID:</label>
-        <br />
-        <IMaskInput
-          id="input"
-          type="text"
-          placeholder="ID"
-          disabled
-          value={id}
-          onChange={(e) => setId(Math.round(Math.flour()) * 1000)}
-        />
         <br />
         <label>Nome:</label>
         <br />
