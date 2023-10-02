@@ -14,6 +14,7 @@ export default function FormularioProdutos() {
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
+  const [banner, setBanner] = useState('')
 
   useEffect(() => {
     function idProdutos() {
@@ -25,10 +26,10 @@ export default function FormularioProdutos() {
   async function handleFormulario(e) {
     e.preventDefault();
 
-    if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
-      alert("Campos em Branco");
-      return;
-    }
+    // if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
+    //   alert("Campos em Branco");
+    //   return;
+    // }
 
     // alert(`Produtos: ${id}
     //     \nNome:${nome} 
@@ -41,6 +42,7 @@ export default function FormularioProdutos() {
       nome,
       fabricante,
       quantidade,
+      banner,
       preco,
     });
     navigate("/ListarProdutos");
@@ -48,7 +50,7 @@ export default function FormularioProdutos() {
     toast.success('Produto Cadastrado com sucesso.',{
       position: toast.POSITION.TOP_LEFT
     })
-
+    console.log(banner)
   }
 
   return (
@@ -108,6 +110,15 @@ export default function FormularioProdutos() {
           value={preco}
           onChange={(e) => setPreco(e.target.value)}
         />
+        <br/>
+        <label>
+                imagem:
+            </label>
+            <br/>
+            <input 
+            type='file'
+             onChange={(e)=>setBanner(e.target.files[0])}/>
+            <br/>
         <center>
 
         <button className="btn" type="submit">
