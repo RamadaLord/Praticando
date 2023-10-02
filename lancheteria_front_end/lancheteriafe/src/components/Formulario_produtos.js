@@ -14,8 +14,7 @@ export default function FormularioProdutos() {
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [categoriaId,setCategoriaId] = useState('')
-  const [banner, setBanner] = useState("");
+  const [categorias, setCategorias] = useState("");
 
   useEffect(() => {
     function idProdutos() {
@@ -23,6 +22,14 @@ export default function FormularioProdutos() {
     }
     idProdutos();
   }, []);
+
+  useEffect(() => {
+    async function mostrarCategoria() {
+      const respsosta = await apiBack.get("/ListarCategorias");
+      setCategorias(respsosta.data);
+    }
+    mostrarCategoria();
+  }, [categorias]);
 
   async function handleFormulario(e) {
     e.preventDefault();
@@ -32,33 +39,31 @@ export default function FormularioProdutos() {
       return;
     }
 
-    // alert(`Produtos: ${id}
-    //     \nNome:${nome}
-    //     \nfabricante:${fabricante}
-    //     \nquantidade:${quantidade}
-    //     \npreco:${preco}`);
-
     await apiBack.post("/CriarProdutos", {
       id,
       nome,
       fabricante,
       quantidade,
-      banner,
       preco,
-      categoriaId
+      categorias,
     });
     navigate("/ListarProdutos");
 
     toast.success("Produto Cadastrado com sucesso.", {
       position: toast.POSITION.TOP_LEFT,
     });
-    console.log(banner);
   }
 
   return (
     <div id="formulario">
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleFormulario}>
+        <br />
+        <label>Categoria:</label>
+        <br />
+        {categorias.map((retorno) => {
+          return <div>{retorno.nome}</div>;
+        })}
         <br />
         <label>ID:</label>
         <br />
@@ -112,21 +117,13 @@ export default function FormularioProdutos() {
           value={preco}
           onChange={(e) => setPreco(e.target.value)}
         />
-        <br/>
-        <label>Categoria:</label>
-        <br/>
-        <IMaskInput
-          id="input"
-          type="text"
-          placeholder="Categoria"
-          value={categoriaId}
-          onChange={(e) => setCategoriaId(e.target.value)}
-        />
         <br />
+        <br />
+        {/* <br />
         <label>imagem:</label>
         <br />
         <input type="file" onChange={(e) => setBanner(e.target.files[0])} />
-        <br />
+        <br /> */}
         <center>
           <button className="btn" type="submit">
             Enviar

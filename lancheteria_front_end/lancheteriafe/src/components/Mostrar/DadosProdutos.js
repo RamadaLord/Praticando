@@ -7,6 +7,7 @@ import apiBack from "../../services/api";
 
 export default function ListarProdutos() {
   const [produtos, setProdutos] = useState([""]);
+  const [categoriaId, setCategoriaId] = useState([""]);
 
   useEffect(() => {
     async function listarProdutos() {
@@ -23,10 +24,17 @@ export default function ListarProdutos() {
         remover: id,
       },
     });
-    toast.error('Dados Apagados!',{
-      position: toast.POSITION.TOP_RIGHT
-    })
+    toast.error("Dados Apagados!", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
   }
+  useEffect(() => {
+    async function mostrarCategoria() {
+      const respsosta = await apiBack.get("/ListarCategorias");
+      setCategoriaId(respsosta.data);
+    }
+    mostrarCategoria();
+  }, [categoriaId]);
 
   return (
     <div>
@@ -42,9 +50,11 @@ export default function ListarProdutos() {
                   {/* id:{produto.id} */}
                   Nome: {produto.nome}
                   <br />
-                  <img className="img2"
-                  src={`http://localhost:3333/files/${produto.banner}`}
-                  alt={produto.banner}/>
+                  <img
+                    className="img2"
+                    src={`http://localhost:3333/files/${produto.banner}`}
+                    alt={produto.banner}
+                  />
                   {/* <br/> */}
                   <br />
                   Fabricante: {produto.fabricante}
@@ -53,16 +63,24 @@ export default function ListarProdutos() {
                   <br />
                   Preço: {produto.preco}
                   <br />
-                  Preço: {produto.categoriaId}
+                  {categoriaId.map((categorias) => {
+                    return <div>Categoria:{categorias.nome}</div>;
+                  })}
                   <center>
-                    <Link to={`/AlterarProduto/${produto.id}`} ><LuFileEdit className="btn2" /></Link>
-                    <GiTrashCan className="btn2" color="red" onClick={() => excluirProdutos(produto.id)} />
+                    <Link to={`/AlterarProduto/${produto.id}`}>
+                      <LuFileEdit className="btn2" />
+                    </Link>
+                    <GiTrashCan
+                      className="btn2"
+                      color="red"
+                      onClick={() => excluirProdutos(produto.id)}
+                    />
                   </center>
                 </p>
                 <br />
                 <br />
               </article>
-              <br/>
+              <br />
             </center>
           );
         })}
