@@ -50,5 +50,19 @@ model Produtos {
   create_at  DateTime? @default(now())
   update_at  DateTime? @default(now())
 
+  categorias  Cateorias @relation(fields: [categoriaId], references: [id])
+  categoriaId String
+
   @@map("produtos")
+}
+
+model Cateorias {
+  id        String    @id @default(uuid())
+  nome      String
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  produtos Produtos[]
+
+  @@map("categorias")
 }

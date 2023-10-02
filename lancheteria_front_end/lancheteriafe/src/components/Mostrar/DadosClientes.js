@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { GiTrashCan } from 'react-icons/gi';
-import { LuEdit } from 'react-icons/lu';
+import { LuFileEdit } from 'react-icons/lu';
 import { toast } from "react-toastify";
 import apiBack from '../../services/api';
 import '../../css/dados.css';
@@ -68,7 +68,7 @@ export default function ListarClientes() {
                 <br />
                 estado:{resultado.estado}
                 <br />
-                <Link to={`/AlterarCliente/${resultado.id}`} ><LuEdit className='btn2' /></Link>
+                <Link to={`/AlterarCliente/${resultado.id}`} ><LuFileEdit className='btn2' /></Link>
                 <GiTrashCan className='btn2' color='red' onClick={() => excluirCliente(resultado.id)} />
               </p>
               <br />

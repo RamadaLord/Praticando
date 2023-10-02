@@ -14,7 +14,8 @@ export default function FormularioProdutos() {
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [banner, setBanner] = useState('')
+  const [categoriaId,setCategoriaId] = useState('')
+  const [banner, setBanner] = useState("");
 
   useEffect(() => {
     function idProdutos() {
@@ -26,13 +27,13 @@ export default function FormularioProdutos() {
   async function handleFormulario(e) {
     e.preventDefault();
 
-    // if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
-    //   alert("Campos em Branco");
-    //   return;
-    // }
+    if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
+      alert("Campos em Branco");
+      return;
+    }
 
     // alert(`Produtos: ${id}
-    //     \nNome:${nome} 
+    //     \nNome:${nome}
     //     \nfabricante:${fabricante}
     //     \nquantidade:${quantidade}
     //     \npreco:${preco}`);
@@ -44,22 +45,23 @@ export default function FormularioProdutos() {
       quantidade,
       banner,
       preco,
+      categoriaId
     });
     navigate("/ListarProdutos");
 
-    toast.success('Produto Cadastrado com sucesso.',{
-      position: toast.POSITION.TOP_LEFT
-    })
-    console.log(banner)
+    toast.success("Produto Cadastrado com sucesso.", {
+      position: toast.POSITION.TOP_LEFT,
+    });
+    console.log(banner);
   }
 
   return (
     <div id="formulario">
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleFormulario}>
-        <br/>
+        <br />
         <label>ID:</label>
-        <br/>
+        <br />
         <IMaskInput
           id="input"
           type="text"
@@ -70,7 +72,7 @@ export default function FormularioProdutos() {
         />
         <br />
         <label>Nome:</label>
-        <br/>
+        <br />
         <IMaskInput
           id="input"
           type="text"
@@ -80,7 +82,7 @@ export default function FormularioProdutos() {
         />
         <br />
         <label>Fabricante:</label>
-        <br/>
+        <br />
         <IMaskInput
           id="input"
           type="text"
@@ -90,7 +92,7 @@ export default function FormularioProdutos() {
         />
         <br />
         <label>Quantidade:</label>
-        <br/>
+        <br />
         <IMaskInput
           id="input"
           type="text"
@@ -101,7 +103,7 @@ export default function FormularioProdutos() {
         />
         <br />
         <label>Preço:</label>
-        <br/>
+        <br />
         <IMaskInput
           id="input"
           type="text"
@@ -111,19 +113,24 @@ export default function FormularioProdutos() {
           onChange={(e) => setPreco(e.target.value)}
         />
         <br/>
-        <label>
-                imagem:
-            </label>
-            <br/>
-            <input 
-            type='file'
-             onChange={(e)=>setBanner(e.target.files[0])}/>
-            <br/>
+        <label>Categoria:</label>
+        <br/>
+        <IMaskInput
+          id="input"
+          type="text"
+          placeholder="Categoria"
+          value={categoriaId}
+          onChange={(e) => setCategoriaId(e.target.value)}
+        />
+        <br />
+        <label>imagem:</label>
+        <br />
+        <input type="file" onChange={(e) => setBanner(e.target.files[0])} />
+        <br />
         <center>
-
-        <button className="btn" type="submit">
-          Enviar
-        </button>
+          <button className="btn" type="submit">
+            Enviar
+          </button>
         </center>
       </form>
     </div>

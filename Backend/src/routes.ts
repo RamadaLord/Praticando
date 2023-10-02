@@ -18,6 +18,7 @@ import { AlteraProdutosC } from './controllers/Altera/AlteraProdutosC';
 import { ListarPUC } from './controllers/Listar/ListarProdutosUnicoS';
 import { ListarCUC } from './controllers/Listar/ListarClienteUnicoC';
 import { AuthUsuarioController } from './controllers/login/AuthUsuarioController';
+import { CategoriasC } from './controllers/categorias/CategoriaController';
 
 //-------Constantes-------//
 const router = Router();
@@ -42,7 +43,7 @@ router.put('/AlteraProduto', new AlteraProdutosC().handle)
 router.delete('/DeletarProdutos', new DeletarProdutosC().handle)
 router.get('/ListarProdutos', new ListarProdutosController().handle)
 router.get('/ListarProdutoUnico/:id', new ListarPUC().handle)
-
+router.post('/CriarCategoria', new CategoriasC().handle)
 //----------//
 
 //-----Upload de arquivos-----//

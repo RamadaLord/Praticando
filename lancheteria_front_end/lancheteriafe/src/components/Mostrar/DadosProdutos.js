@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { GiTrashCan } from "react-icons/gi";
-import { LuEdit } from "react-icons/lu";
+import { LuFileEdit } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import apiBack from "../../services/api";
@@ -52,8 +52,10 @@ export default function ListarProdutos() {
                   Quantidae: {produto.quantidade}
                   <br />
                   Preço: {produto.preco}
+                  <br />
+                  Preço: {produto.categoriaId}
                   <center>
-                    <Link to={`/AlterarProduto/${produto.id}`} ><LuEdit className="btn2" /></Link>
+                    <Link to={`/AlterarProduto/${produto.id}`} ><LuFileEdit className="btn2" /></Link>
                     <GiTrashCan className="btn2" color="red" onClick={() => excluirProdutos(produto.id)} />
                   </center>
                 </p>
