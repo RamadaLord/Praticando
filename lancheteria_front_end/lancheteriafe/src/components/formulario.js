@@ -40,14 +40,14 @@ function Formulario() {
         toast.info("A senha deve conter no minimo 6 caracteres");
         return;
       }
-      // if (senha === senhaC) {
-      //   toast.success("Cadastro Efetuado Com Sucesso", {
-      //     position: toast.POSITION.TOP_LEFT,
-      //   });
-      //   navigate("/ListarUsuarios");
-      // } else {
-      //   toast.warn("Senhas nao batem");
-      // }
+      if (senha === senhaC) {
+        toast.success("Cadastro Efetuado Com Sucesso", {
+          position: toast.POSITION.TOP_LEFT,
+        });
+        navigate("/ListarUsuarios");
+      } else {
+        toast.warn("Senhas nao batem");
+      }
     } catch (err) {
       toast.warn("Erro");
     }
