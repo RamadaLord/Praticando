@@ -13,15 +13,15 @@ export default function FormularioProdutos() {
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [categorias, setCategorias] = useState("");
+  const [categoriaId, setCategoriaId] = useState("");
 
   useEffect(() => {
     async function mostrarCategoria() {
-      const respsosta = await apiBack.get("/ListarCategorias");
-      setCategorias(respsosta.data);
+      const resposta = await apiBack.get("/ListarCategorias");
+      setCategoriaId(resposta.data);
     }
     mostrarCategoria();
-  }, [categorias]);
+  }, [categoriaId]);
 
   async function handleFormulario(e) {
     e.preventDefault();
@@ -36,7 +36,7 @@ export default function FormularioProdutos() {
       fabricante,
       quantidade,
       preco,
-      categorias,
+      categoriaId,
     });
     navigate("/ListarProdutos");
 
@@ -51,20 +51,9 @@ export default function FormularioProdutos() {
       <form onSubmit={handleFormulario}>
         <br />
         <center>
-        <label>Categoria:</label>
-        <br />
-
-        <select>
-          {categorias.map((retorno)=>{
-            return(
-              <option>{retorno.nome}</option>
-            )
-          })}
-        </select>
-        
+          <label>Categoria:</label>
+          <br />
         </center>
-        <br />
-        <label>ID:</label>
         <br />
         <label>Nome:</label>
         <br />

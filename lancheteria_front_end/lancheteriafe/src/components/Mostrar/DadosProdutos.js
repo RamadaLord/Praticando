@@ -30,8 +30,8 @@ export default function ListarProdutos() {
   }
   useEffect(() => {
     async function mostrarCategoria() {
-      const respsosta = await apiBack.get("/ListarCategorias");
-      setCategoriaId(respsosta.data);
+      const resposta = await apiBack.get("/ListarCategorias");
+      setCategoriaId(resposta.data);
     }
     mostrarCategoria();
   }, [categoriaId]);
