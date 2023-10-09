@@ -7,7 +7,7 @@ interface AuthLogIn {
   password: string;
 }
 
-class AuthUsuarioServices {
+class LogInS {
   async execute({ email, password }: AuthLogIn) {
     const usuario = await prismaClient.user.findFirst({
       where: {
@@ -15,14 +15,14 @@ class AuthUsuarioServices {
       },
     });
     if (!usuario) {
-      throw new Error("Usuario/Senha incorretos");
+      throw new Error("Usuario ou Senha incorretos");
     }
     const autenticado = await compare(password, usuario.senha);
     if (!autenticado) {
-      throw new Error("Usuario/Senha Incorretos");
+      throw new Error("Usuario ou Senha Incorretos");
     }
     if (!password) {
-      throw new Error("Usuario/Senha incorretos");
+      throw new Error("Usuario ou senha incorretos");
     }
 
     const token = sign(
@@ -41,10 +41,9 @@ class AuthUsuarioServices {
       email: usuario.email,
       token: token,
     };
-
     console.log(autenticado);
-    return { Dados: "Autenticação com sucesso" };
+    return { Dados: "Autenticado com sucesso" };
   }
 }
 
-export { AuthUsuarioServices };
+export { LogInS };
