@@ -13,6 +13,7 @@ import { LogInC } from './Controllers/login/LogInC'
 //Usuarios
 router.post('/CriarUsuarios', new CriarUsuarioC().handle)
 router.post('/Login', new LogInC().handle)
+
 //Filmes
 router.post('/CriarFilmes', ItsAuth, new CriarFilmesC().handle)
 router.get('/ListarFilmes', ItsAuth, new ListarFilmesC().handle)
