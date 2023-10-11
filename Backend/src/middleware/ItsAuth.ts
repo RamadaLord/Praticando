@@ -20,6 +20,7 @@ export function ItsAuth(
             token,
             process.env.JWT_SECRET
         ) as Payload 
+        next()
         console.log(sub)
     }catch(err){
         return res.status(401).end()

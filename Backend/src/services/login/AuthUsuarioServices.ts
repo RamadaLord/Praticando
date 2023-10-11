@@ -41,7 +41,7 @@ class AuthUsuarioServices {
       email: usuario.email,
       token: token,
     };
-
+    
     console.log(autenticado);
     return { Dados: "Autenticação com sucesso" };
   }
