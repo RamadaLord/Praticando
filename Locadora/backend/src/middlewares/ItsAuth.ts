@@ -8,7 +8,7 @@ interface Payload{
 export function ItsAuth(
     req: Request,
     res: Response,
-    nest: NextFunction
+    next: NextFunction
 ){
     const authToken = req.headers.authorization
     if(!authToken){
@@ -20,7 +20,7 @@ export function ItsAuth(
             token,
             process.env.JWT_SECRET
         ) as Payload
-        console.log(sub)
+        return next()
     }catch(err){
         return res.status(401).end
     }

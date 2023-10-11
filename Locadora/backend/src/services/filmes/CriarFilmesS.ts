@@ -24,6 +24,7 @@ class CriarFilmesS {
         categoriaId:true
       },
     });
+    console.log(filmes)
     return { Dados: filmes };
   }
 }
