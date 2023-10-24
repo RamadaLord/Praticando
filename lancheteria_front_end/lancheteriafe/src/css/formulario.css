@@ -27,6 +27,12 @@ body{
     z-index: 0;
 }
 
+:root {
+    --cor-caixa: #893514;
+    --cor-texto: #000000;
+}
+
+
 #formulario{
     width: 45%;
     align-items: center;
@@ -38,6 +44,9 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 25px;
+    border: 4px solid var(--cor-caixa);
+    text-shadow: 10 0 0.125em rgba(68, 68, 168, 0.5), 0 0 0.25em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--cor-caixa), 0 0 0.5em 0 var(--cor-caixa);
     margin-left: 425px;
     border-radius: 45px;
 }
@@ -65,7 +74,7 @@ body{
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
-    color: #fff;
+    background-image: linear-gradient(to left, #8d8b29, #f7f200);
     border-radius: 50px;
     width: 300px;
     transition: 0.75s all;

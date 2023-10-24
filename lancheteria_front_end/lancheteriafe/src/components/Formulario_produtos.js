@@ -13,7 +13,8 @@ export default function FormularioProdutos() {
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [categoriaId, setCategoriaId] = useState("");
+  const [categoriaId, setCategoriaId] = useState([""]);
+  const [banner, setBanner] = useState("");
 
   useEffect(() => {
     async function mostrarCategoria() {
@@ -51,7 +52,17 @@ export default function FormularioProdutos() {
       <form onSubmit={handleFormulario}>
         <br />
         <center>
-          <label>Categoria:</label>
+          <label>⇓Categorias⇓</label>
+          <br />
+          <select id="input">
+            {categoriaId.map((retorno) => {
+              return (
+                <option value={retorno.id} key={retorno.id}>
+                  {retorno.nome}
+                </option>
+              );
+            })}
+          </select>
           <br />
         </center>
         <br />
@@ -98,11 +109,19 @@ export default function FormularioProdutos() {
         />
         <br />
         <br />
-        {/* <br />
-        <label>imagem:</label>
         <br />
-        <input type="file" onChange={(e) => setBanner(e.target.files[0])} />
-        <br /> */}
+        <label for="images" className="drop-container" id="dropcontainer">
+          Imagem:
+          <br />
+          <input
+            type="file"
+            id="images"
+            accept="image/*"
+            required
+            onChange={(e) => setBanner(e.target.files[0])}
+          />
+          <br />
+        </label>
         <center>
           <button className="btn" type="submit">
             Enviar

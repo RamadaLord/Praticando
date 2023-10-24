@@ -1,11 +1,11 @@
 .footer {
     width: 100%;
     height: 250px;
-    background-color: black;
+    background-image: linear-gradient(to left, #8d8b29, #f7f200);
     text-align: center;
 }
 
 .map {
-    width:"600";
-    height:"450";
-} 
+    width: "600";
+    height: "450";
+}

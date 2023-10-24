@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import apiBack from "../services/api";
 import "../css/formulario.css";
 import { toast } from "react-toastify";
-
+import '../css/imginput.css'
 
 function FormularioClientes() {
 
