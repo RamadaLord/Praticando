@@ -9,12 +9,13 @@ import { toast } from "react-toastify";
 export default function FormularioProdutos() {
   const navigate = useNavigate();
 
+  const [categoriaId, setCategoriaId] = useState([""]);
   const [nome, setNome] = useState("");
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [categoriaId, setCategoriaId] = useState([""]);
-  const [banner, setBanner] = useState("");
+  const [categoria, setCategoria] = useState('')
+  const [bannerImg, setBannerImg] = useState("");
 
   useEffect(() => {
     async function mostrarCategoria() {
@@ -38,6 +39,7 @@ export default function FormularioProdutos() {
       quantidade,
       preco,
       categoriaId,
+      bannerImg
     });
     navigate("/ListarProdutos");
 
@@ -54,7 +56,10 @@ export default function FormularioProdutos() {
         <center>
           <label>⇓Categorias⇓</label>
           <br />
-          <select id="input">
+          <select value={categoria}
+          onChange={(e)=>setCategoria(e.target.value)}
+          id="input">
+            <option> - </option>
             {categoriaId.map((retorno) => {
               return (
                 <option value={retorno.id} key={retorno.id}>
@@ -116,9 +121,10 @@ export default function FormularioProdutos() {
           <input
             type="file"
             id="images"
+            // value={bannerImg}
             accept="image/*"
             required
-            onChange={(e) => setBanner(e.target.files[0])}
+            onChange={(e) => setBannerImg(e.target.files[0])}
           />
           <br />
         </label>

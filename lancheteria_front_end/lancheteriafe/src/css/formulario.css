@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     align-items: center;
     /* display: flex; */
     flex-direction: row;
@@ -11,12 +11,12 @@ body{
     justify-content: space-around;
     background-color: #d8d657;
     background-image: url('../img/lanchito.jpg');
-    padding-top:5px ;
+    padding-top: 5px;
     color: #070707;
 
 }
 
-.principal{
+.principal {
     text-align: center;
     align-items: center;
     border-radius: 5px;
@@ -33,14 +33,14 @@ body{
 }
 
 
-#formulario{
+#formulario {
     width: 45%;
     align-items: center;
     flex-direction: row;
     justify-content: center;
     background: rgba(214, 212, 81, 0.78);
     /* opacity: 88%; */
-    padding:60px 0;
+    padding: 60px 0;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 25px;
@@ -51,44 +51,46 @@ body{
     border-radius: 45px;
 }
 
-#input{
+#input {
     border-radius: 50px;
     font-size: 25px;
-    text-align:justify;
+    text-align: justify;
     width: 85%;
     padding: 10px 0 10px 75px;
     /* color: #d2d2d2; */
     background: #ffffff;
     border: 0;
+    background-image: linear-gradient(to left, #696834, #c7c41f94, #69683400);
     transition: all .3s ease-in-out;
     box-shadow: 14px 5px 3px 1px #9c5438;
     margin: 10px;
 }
 
-.btn{
+.btn {
 
     padding: 1em 2em;
     margin-top: 10px;
     cursor: pointer;
-    background-color: #389c9c;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
     background-image: linear-gradient(to left, #8d8b29, #f7f200);
     border-radius: 50px;
     width: 300px;
-    transition: 0.75s all;
-  
+    transition: .75s all;
+
 }
 
-.btn:hover{
-    scale: 1.1;
-    transition: 0.75s all;
+.btn:hover {
+    scale: .1;
+    transition: .05s all;
+        background-image: linear-gradient(to left, #696834, #c7c41f94,#69683400 );
+
 }
 
-label{
+label {
     border: solid red 2px;
     background-color: #070707;
     border-radius: 5px;
-    color:white;
+    color: white;
 }

@@ -3,7 +3,7 @@
     top: 0;
     position:sticky ;   
     padding-bottom: 10px;
-    background-image: linear-gradient(to left, #8d8b29, #f7f200);
+    background-image: linear-gradient(to left, #696834ee,#696834, #c7c41f,#696834,#696834ee );
     width: 100%;
     z-index: +99999999999px;
     box-shadow: 2px 5px 6px 3px rgba(0, 0, 0, 0.5);
