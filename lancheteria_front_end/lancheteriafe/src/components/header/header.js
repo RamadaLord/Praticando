@@ -13,14 +13,14 @@ export default function Header (){
 
       <Link to='/Login' >LogIn</Link>
       </h1>
-        <h1>
+        <h1 className="h1" >
         
         <Link to="/CadastroUsuario"> Usuario /</Link>
         <Link to="/FormularioClientes"> Cliente </Link>
         {/* <Link to="/FormularioUsuario"> Usuario </Link> */}
         <Link to="/FormularioProdutos">/ Produtos </Link>
         </h1>
-        <h2>
+        <h2 className="h2" >
           <Link to="/ListarUsuarios">Dados Usuarios/</Link> 
           <Link to='/ListarClientes'>Dados Clientes/</Link>
           <Link to='/ListarProdutos'>Dados Produtos</Link>

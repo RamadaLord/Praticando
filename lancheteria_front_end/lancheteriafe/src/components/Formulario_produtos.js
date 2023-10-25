@@ -14,8 +14,8 @@ export default function FormularioProdutos() {
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [categoria, setCategoria] = useState('')
-  const [bannerImg, setBannerImg] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [bannerImg, setBannerImg] = useState(null);
 
   useEffect(() => {
     async function mostrarCategoria() {
@@ -25,23 +25,36 @@ export default function FormularioProdutos() {
     mostrarCategoria();
   }, [categoriaId]);
 
+  function handleImg(e) {
+    if (!e.target.files) {
+      toast.success("Sem arquivo");
+      return;
+    }
+    const img = e.target.files[0];
+    if (img.type === "image/png" || img.type === "image/jpeg") {
+      setBannerImg(img);
+    }
+  }
+
   async function handleFormulario(e) {
     e.preventDefault();
 
-    if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
-      alert("Campos em Branco");
-      return;
-    }
+    // if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
+    //   alert("Campos em Branco");
+    //   return;
+    // }
 
-    await apiBack.post("/CriarProdutos", {
-      nome,
-      fabricante,
-      quantidade,
-      preco,
-      categoriaId,
-      bannerImg
-    });
-    navigate("/ListarProdutos");
+    // await apiBack.post("/CriarProdutos", {
+    //   nome,
+    //   fabricante,
+    //   quantidade,
+    //   preco,
+    //   categoriaId,
+    //   bannerImg
+    // });
+    // navigate("/ListarProdutos");
+    console.log(categoria);
+    console.log(bannerImg);
 
     toast.success("Produto Cadastrado com sucesso.", {
       position: toast.POSITION.TOP_LEFT,
@@ -56,9 +69,11 @@ export default function FormularioProdutos() {
         <center>
           <label>⇓Categorias⇓</label>
           <br />
-          <select value={categoria}
-          onChange={(e)=>setCategoria(e.target.value)}
-          id="input">
+          <select
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
+            id="input"
+          >
             <option> - </option>
             {categoriaId.map((retorno) => {
               return (
@@ -120,11 +135,10 @@ export default function FormularioProdutos() {
           <br />
           <input
             type="file"
-            id="images"
-            // value={bannerImg}
-            accept="image/*"
-            required
-            onChange={(e) => setBannerImg(e.target.files[0])}
+            // id="images"
+            accept="image/jpeg, image/png"
+            onchange={handleImg}
+            // onChange={(e) => setBannerImg(e.target.files[0])}
           />
           <br />
         </label>
