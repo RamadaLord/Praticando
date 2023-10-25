@@ -16,7 +16,6 @@ export default function ListarProdutos() {
     }
     listarProdutos();
   }, [produtos]);
-  console.log(produtos);
 
   async function excluirProdutos(id) {
     await apiBack.delete("/DeletarProdutos/", {

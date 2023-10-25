@@ -27,7 +27,7 @@ export default function FormularioProdutos() {
 
   function handleImg(e) {
     if (!e.target.files) {
-      toast.success("Sem arquivo");
+      toast.warning("Sem arquivo");
       return;
     }
     const img = e.target.files[0];
@@ -37,12 +37,31 @@ export default function FormularioProdutos() {
   }
 
   async function handleFormulario(e) {
-    e.preventDefault();
+    try {
+      e.preventDefault();
 
-    // if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
-    //   alert("Campos em Branco");
-    //   return;
-    // }
+      const categoriaId = categoria;
+
+      const data = new FormData();
+
+      data.append("nome", nome);
+      data.append("fabricante", fabricante);
+      data.append("quantidade", quantidade);
+      data.append("preco", preco);
+      data.append("categoriaId", categoriaId);
+      data.append("file", bannerImg);
+
+      const resposta = await apiBack.post("/CriarProdutos", data);
+
+      console.log(resposta);
+    } catch (err) {
+      console.log(err);
+    }
+
+    if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
+      alert("Campos em Branco");
+      return;
+    }
 
     // await apiBack.post("/CriarProdutos", {
     //   nome,
@@ -51,10 +70,8 @@ export default function FormularioProdutos() {
     //   preco,
     //   categoriaId,
     //   bannerImg
-    // });
-    // navigate("/ListarProdutos");
-    console.log(categoria);
-    console.log(bannerImg);
+    // }); Bloco de codigos antes do envio de arquivos
+    navigate("/ListarProdutos");
 
     toast.success("Produto Cadastrado com sucesso.", {
       position: toast.POSITION.TOP_LEFT,
@@ -130,15 +147,14 @@ export default function FormularioProdutos() {
         <br />
         <br />
         <br />
-        <label for="images" className="drop-container" id="dropcontainer">
+        <label className="drop-container" id="dropcontainer">
           Imagem:
           <br />
           <input
             type="file"
-            // id="images"
+            id="images"
             accept="image/jpeg, image/png"
-            onchange={handleImg}
-            // onChange={(e) => setBannerImg(e.target.files[0])}
+            onChange={handleImg}
           />
           <br />
         </label>
