@@ -17,11 +17,19 @@ export default function FormularioProdutos() {
   const [categoria, setCategoria] = useState("");
   const [bannerImg, setBannerImg] = useState(null);
 
+  const iToken = localStorage.getItem("@tklogin2023");
+  const token = JSON.parse(iToken);
+
   useEffect(() => {
     async function mostrarCategoria() {
-      const resposta = await apiBack.get("/ListarCategorias");
+      const resposta = await apiBack.get("/ListarCategorias", {
+      headers: {
+          Authorization: 'Bearer ' + `${token}`
+        }
+      });
       setCategoriaId(resposta.data);
     }
+
     mostrarCategoria();
   }, [categoriaId]);
 

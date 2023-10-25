@@ -39,7 +39,7 @@ function FormularioClientes() {
       return;
     }
 
-    await apiBack.post("/CriarClientes", {
+    await apiBack.post("/CriarUsuarios", {
       nome,
       cpf_cnpj,
       rg_ie,
@@ -53,11 +53,11 @@ function FormularioClientes() {
       estado,
     });
 
-    navigate("/ListarClientes")
-
-    toast.success('Produto Cadastrado com sucesso.',{
+    toast.success(' Cadastrado com sucesso.',{
       position: toast.POSITION.TOP_LEFT
     })
+    navigate("/ListarClientes")
+
 
   }
   return (

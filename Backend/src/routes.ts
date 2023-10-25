@@ -30,24 +30,24 @@ router.post('/AuthLogIn', new AuthUsuarioController().handle)
 
 //-------usuarios-------//
 router.post('/CriarUsuarios', new CriarUsuarioController().handle);
-router.get('/ListarUsuarios',new ListarUsuariosController().handle)
-router.get('/ListarUsuarioUnico/:id', new ListarUsuarioUC().handle)
-router.put('/AlteraUsuario', new AlterarUsuarioC().handle)
-router.delete('/DeletarUsuarios', new DeletarUsuarioController().handle);
+router.get('/ListarUsuarios',ItsAuth, new ListarUsuariosController().handle)
+router.get('/ListarUsuarioUnico/:id',ItsAuth,  new ListarUsuarioUC().handle)
+router.put('/AlteraUsuario',ItsAuth,  new AlterarUsuarioC().handle)
+router.delete('/DeletarUsuarios',ItsAuth,  new DeletarUsuarioController().handle);
 //-------clientes-------//
 router.post('/CriarClientes', new CriarClienteController().handle);
-router.put('/AlteraCliente', new AlteraClienteC().handle)
-router.delete('/DeletarClientes', new DeletarClientesC().handle)
-router.get('/ListarClientes', new ListarClientesController().handle);
-router.get('/ListarClienteUnico/:id', new ListarCUC().handle)
+router.put('/AlteraCliente',ItsAuth,  new AlteraClienteC().handle)
+router.delete('/DeletarClientes',ItsAuth,  new DeletarClientesC().handle)
+router.get('/ListarClientes',ItsAuth,  new ListarClientesController().handle);
+router.get('/ListarClienteUnico/:id',ItsAuth,  new ListarCUC().handle)
 //-------Produtos-------//
-router.post('/CriarProdutos', upload.single('file'), new CriarProdutosController().handle)
-router.put('/AlteraProduto', new AlteraProdutosC().handle)
-router.delete('/DeletarProdutos', new DeletarProdutosC().handle)
-router.get('/ListarProdutos', new ListarProdutosController().handle)
-router.get('/ListarProdutoUnico/:id', new ListarPUC().handle)
-router.post('/CriarCategoria', new CategoriasC().handle)
-router.get('/ListarCategorias', new ListarCategoriasC().handle)
+router.post('/CriarProdutos',ItsAuth,  upload.single('file'), new CriarProdutosController().handle)
+router.put('/AlteraProduto',ItsAuth,  new AlteraProdutosC().handle)
+router.delete('/DeletarProdutos',ItsAuth,  new DeletarProdutosC().handle)
+router.get('/ListarProdutos',ItsAuth,  new ListarProdutosController().handle)
+router.get('/ListarProdutoUnico/:id',ItsAuth,  new ListarPUC().handle)
+router.post('/CriarCategoria',ItsAuth,  new CategoriasC().handle)
+router.get('/ListarCategorias',ItsAuth,  new ListarCategoriasC().handle)
 //----------//
 
 //-----Upload de arquivos-----//
