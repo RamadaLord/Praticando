@@ -10,11 +10,11 @@ export default function FormularioProdutos() {
   const navigate = useNavigate();
 
   const [categoriaId, setCategoriaId] = useState([""]);
+  const [categoria, setCategoria] = useState("");
   const [nome, setNome] = useState("");
   const [fabricante, setFabricante] = useState("");
   const [quantidade, setQuantidade] = useState("");
   const [preco, setPreco] = useState("");
-  const [categoria, setCategoria] = useState("");
   const [bannerImg, setBannerImg] = useState(null);
 
   const iToken = localStorage.getItem("@tklogin2023");
@@ -23,9 +23,9 @@ export default function FormularioProdutos() {
   useEffect(() => {
     async function mostrarCategoria() {
       const resposta = await apiBack.get("/ListarCategorias", {
-      headers: {
-          Authorization: 'Bearer ' + `${token}`
-        }
+        headers: {
+          Authorization: `Bearer + ${token}`,
+        },
       });
       setCategoriaId(resposta.data);
     }

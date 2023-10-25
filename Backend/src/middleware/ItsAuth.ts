@@ -8,7 +8,7 @@ interface Payload {
 export function ItsAuth(req: Request, res: Response, next: NextFunction) {
   const authToken = req.headers.authorization;
   if (!authToken) {
-    return res.status(401).end();
+    return res.json({dados: 'Token Invalido'});
   }
   const [, token] = authToken.split(" ");
   try {
@@ -16,6 +16,6 @@ export function ItsAuth(req: Request, res: Response, next: NextFunction) {
     return next();
     console.log(sub);
   } catch (err) {
-    return res.status(401).end();
+    return res.json({dados:'Token invalido'});
   }
 }

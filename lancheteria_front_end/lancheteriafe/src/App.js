@@ -5,9 +5,12 @@ import "../src/img/img.css"
 
 import { Flip, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import AuthProvider from "./components/context/AuthContext";
 
 function App() {
   return (
+    <AuthProvider>
+
     <div>
       <Rotas/>
       <ToastContainer
@@ -16,6 +19,7 @@ function App() {
     transition={Flip}
     />
     </div>
+    </AuthProvider>
   );
 }
 
