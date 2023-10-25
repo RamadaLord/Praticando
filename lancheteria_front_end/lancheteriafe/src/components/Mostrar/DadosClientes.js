@@ -44,8 +44,8 @@ export default function ListarClientes() {
           <center>
             <article className='dados'>
               <p>
-                ID: {resultado.id}
-                <br />
+                {/* ID: {resultado.id}
+                <br /> */}
                 Nome:{resultado.nome}
                 <br />
                 CPF:{resultado.cpf_cnpj}

@@ -56,8 +56,8 @@ export default function ListarUsuarios() {
           <center>
             <article className="dados" key={resultado.id}>
               <p>
-                ID : {resultado.id}
-                <br />
+                {/* ID : {resultado.id}
+                <br /> */}
                 Nome: {resultado.nome}
                 <br />
                 E-mail: {resultado.email}
