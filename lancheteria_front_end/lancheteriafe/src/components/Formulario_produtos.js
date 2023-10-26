@@ -61,15 +61,21 @@ export default function FormularioProdutos() {
 
       const resposta = await apiBack.post("/CriarProdutos", data);
 
+      if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
+        alert("Campos em Branco");
+        return;
+      }
       console.log(resposta);
     } catch (err) {
       console.log(err);
     }
 
-    if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
-      alert("Campos em Branco");
-      return;
-    }
+    setNome('')
+    setFabricante('')
+    setQuantidade('')
+    setPreco('')
+    setBannerImg(null)
+
 
     // await apiBack.post("/CriarProdutos", {
     //   nome,
