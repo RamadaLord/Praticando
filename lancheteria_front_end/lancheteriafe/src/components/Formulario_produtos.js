@@ -1,32 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import apiBack from "../services/api";
-import { IMaskInput } from "react-imask";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import apiBack from '../services/api';
+import { IMaskInput } from 'react-imask';
 
-import "../css/formulario.css";
-import { toast } from "react-toastify";
+import '../css/formulario.css';
+import { toast } from 'react-toastify';
 
 export default function FormularioProdutos() {
+  //Navegacao
   const navigate = useNavigate();
-
-  const [categoriaId, setCategoriaId] = useState([""]);
-  const [categoria, setCategoria] = useState("");
-  const [nome, setNome] = useState("");
-  const [fabricante, setFabricante] = useState("");
-  const [quantidade, setQuantidade] = useState("");
-  const [preco, setPreco] = useState("");
+  //Cpnstantes de armazenamento
+  const [categoriaId, setCategoriaId] = useState(['']);
+  const [categoria, setCategoria] = useState('');
+  const [nome, setNome] = useState('');
+  const [fabricante, setFabricante] = useState('');
+  const [quantidade, setQuantidade] = useState('');
+  const [preco, setPreco] = useState('');
   const [bannerImg, setBannerImg] = useState(null);
-
-  const iToken = localStorage.getItem("@tklogin2023");
+  //Constantes de localstorage
+  const iToken = localStorage.getItem('@tklogin2023');
   const token = JSON.parse(iToken);
 
   useEffect(() => {
     async function mostrarCategoria() {
-      const resposta = await apiBack.get("/ListarCategorias", {
+      const resposta = await apiBack.get('/ListarCategorias', {
         headers: {
-          Authorization: `Bearer + ${token}`,
+          // eslint-disable-next-line no-useless-concat
+          Authorization: 'Bearer ' + `${token}`
         },
       });
+      // eslint-disable-next-line
       setCategoriaId(resposta.data);
     }
 
@@ -35,11 +38,11 @@ export default function FormularioProdutos() {
 
   function handleImg(e) {
     if (!e.target.files) {
-      toast.warning("Sem arquivo");
+      toast.warning('Sem arquivo');
       return;
     }
     const img = e.target.files[0];
-    if (img.type === "image/png" || img.type === "image/jpeg") {
+    if (img.type === 'image/png' || img.type === 'image/jpeg') {
       setBannerImg(img);
     }
   }
@@ -52,17 +55,17 @@ export default function FormularioProdutos() {
 
       const data = new FormData();
 
-      data.append("nome", nome);
-      data.append("fabricante", fabricante);
-      data.append("quantidade", quantidade);
-      data.append("preco", preco);
-      data.append("categoriaId", categoriaId);
-      data.append("file", bannerImg);
+      data.append('nome', nome);
+      data.append('fabricante', fabricante);
+      data.append('quantidade', quantidade);
+      data.append('preco', preco);
+      data.append('categoriaId', categoriaId);
+      data.append('file', bannerImg);
 
-      const resposta = await apiBack.post("/CriarProdutos", data);
+      const resposta = await apiBack.post('/CriarProdutos', data);
 
-      if (nome === "" || fabricante === "" || quantidade === "" || preco === "") {
-        alert("Campos em Branco");
+      if (nome === '' || fabricante === '' || quantidade === '' || preco === '') {
+        alert('Campos em Branco');
         return;
       }
       console.log(resposta);
@@ -77,7 +80,7 @@ export default function FormularioProdutos() {
     setBannerImg(null)
 
 
-    // await apiBack.post("/CriarProdutos", {
+    // await apiBack.post('/CriarProdutos', {
     //   nome,
     //   fabricante,
     //   quantidade,
@@ -85,15 +88,15 @@ export default function FormularioProdutos() {
     //   categoriaId,
     //   bannerImg
     // }); Bloco de codigos antes do envio de arquivos
-    navigate("/ListarProdutos");
+    navigate('/ListarProdutos');
 
-    toast.success("Produto Cadastrado com sucesso.", {
+    toast.success('Produto Cadastrado com sucesso.', {
       position: toast.POSITION.TOP_LEFT,
     });
   }
 
   return (
-    <div id="formulario">
+    <div id='formulario'>
       <h1>Cadastro de Produtos</h1>
       <form onSubmit={handleFormulario}>
         <br />
@@ -103,7 +106,7 @@ export default function FormularioProdutos() {
           <select
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
-            id="input"
+            id='input'
           >
             <option> - </option>
             {categoriaId.map((retorno) => {
@@ -120,9 +123,9 @@ export default function FormularioProdutos() {
         <label>Nome:</label>
         <br />
         <IMaskInput
-          id="input"
-          type="text"
-          placeholder="Nome do produto"
+          id='input'
+          type='text'
+          placeholder='Nome do produto'
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         />
@@ -130,9 +133,9 @@ export default function FormularioProdutos() {
         <label>Fabricante:</label>
         <br />
         <IMaskInput
-          id="input"
-          type="text"
-          placeholder="Fabricante"
+          id='input'
+          type='text'
+          placeholder='Fabricante'
           value={fabricante}
           onChange={(e) => setFabricante(e.target.value)}
         />
@@ -140,10 +143,10 @@ export default function FormularioProdutos() {
         <label>Quantidade:</label>
         <br />
         <IMaskInput
-          id="input"
-          type="text"
-          mask="000.00"
-          placeholder="Quantidade"
+          id='input'
+          type='text'
+          mask='000.00'
+          placeholder='Quantidade'
           value={quantidade}
           onChange={(e) => setQuantidade(e.target.value)}
         />
@@ -151,29 +154,29 @@ export default function FormularioProdutos() {
         <label>Preço:</label>
         <br />
         <IMaskInput
-          id="input"
-          type="text"
-          mask="R$00,00"
-          placeholder="Valor"
+          id='input'
+          type='text'
+          mask='R$00,00'
+          placeholder='Valor'
           value={preco}
           onChange={(e) => setPreco(e.target.value)}
         />
         <br />
         <br />
         <br />
-        <label className="drop-container" id="dropcontainer">
+        <label className='drop-container' id='dropcontainer'>
           Imagem:
           <br />
           <input
-            type="file"
-            id="images"
-            accept="image/jpeg, image/png"
+            type='file'
+            id='images'
+            accept='image/jpeg, image/png'
             onChange={handleImg}
           />
           <br />
         </label>
         <center>
-          <button className="btn" type="submit">
+          <button className='btn' type='submit'>
             Enviar
           </button>
         </center>

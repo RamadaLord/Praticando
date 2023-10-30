@@ -12,9 +12,9 @@ export function ItsAuth(req: Request, res: Response, next: NextFunction) {
   }
   const [, token] = authToken.split(" ");
   try {
-    const { sub } = verify(token, process.env.JWT_SECRET) as Payload;
+    const { sub } = verify(token, process.env.JWT_SECRET) as Payload 
+    req.user_id = sub
     return next();
-    console.log(sub);
   } catch (err) {
     return res.json({dados:'Token invalido'});
   }
