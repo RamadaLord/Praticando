@@ -10,7 +10,7 @@ export function ItsAuth(req: Request, res: Response, next: NextFunction) {
   if (!authToken) {
     return res.json({dados: 'Token Invalido'});
   }
-  const [, token] = authToken.split(" ");
+  const [, token] = authToken.split(' ');
   try {
     const { sub } = verify(token, process.env.JWT_SECRET) as Payload 
     req.user_id = sub

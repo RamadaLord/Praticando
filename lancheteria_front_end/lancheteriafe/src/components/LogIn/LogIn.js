@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { IMaskInput } from "react-imask";
 import { toast } from "react-toastify";
-import apiBack from "../../services/api";
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from "../context/AuthContext";
 
@@ -39,24 +38,8 @@ export default function LogIn(){
                      position: toast.POSITION.TOP_CENTER,
                      theme: "light"
                     })
-            // navigate('/ListarProdutos')
+            navigate('/ListarProdutos')
         }
-
-    //    try{
-    //      await apiBack.post('/AuthLogIn',{
-    //         email,
-    //         password
-    //     })
-    //     toast('Login efetuado com sucesso',{
-    //      position: toast.POSITION.TOP_CENTER,
-    //      theme: "light"
-    //     })
-    //     navigate('/ListarUsuarios')
-    //     console.log(email, password)
-    //    }catch(err){
-    //     toast.error(err.response.data.error)
-
-    //    }
 
     }
 

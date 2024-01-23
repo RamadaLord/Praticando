@@ -23,6 +23,7 @@ import { ListarCategoriasC } from './controllers/Listar/ListarCategoriasC';
 
 //-------Constantes-------//
 import { ItsAuth } from './middleware/ItsAuth';
+import { CriarMotoqueiroC } from './controllers/motoqueiros/CriarMotoqueirosC';
 const router = Router();
 const upload = multer(uploadConfig.upload('./tmp'))
 //-------Login-------//
@@ -40,6 +41,8 @@ router.put('/AlteraCliente',ItsAuth,  new AlteraClienteC().handle)
 router.delete('/DeletarClientes',ItsAuth,  new DeletarClientesC().handle)
 router.get('/ListarClientes',ItsAuth,  new ListarClientesController().handle);
 router.get('/ListarClienteUnico/:id',ItsAuth,  new ListarCUC().handle)
+//------Motoqueiros------//
+router.post('/CriarMotoqueiro', new CriarMotoqueiroC().handle)
 //-------Produtos-------//
 router.post('/CriarProdutos',ItsAuth,  upload.single('file'), new CriarProdutosController().handle)
 router.put('/AlteraProduto',ItsAuth,  new AlteraProdutosC().handle)

@@ -34,6 +34,7 @@ export default function FormularioProdutos() {
     }
 
     mostrarCategoria();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoriaId]);
 
   function handleImg(e) {

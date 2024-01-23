@@ -66,3 +66,15 @@ model Cateorias {
 
   @@map("categorias")
 }
+
+model Motoqueiro {
+  id      String @id @default(uuid())
+  nome    String
+  nusuario String
+  senha   String
+
+  create_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("motoqueiros")
+}
