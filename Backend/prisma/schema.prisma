@@ -24,6 +24,8 @@ model User {
 model Clientes {
   id          String    @id @default(uuid())
   nome        String
+  email       String
+  senha       String
   cpf_cnpj    String
   rg_ie       String
   tel_cel     String
@@ -68,10 +70,10 @@ model Cateorias {
 }
 
 model Motoqueiro {
-  id      String @id @default(uuid())
-  nome    String
+  id       String @id @default(uuid())
+  nome     String
   nusuario String
-  senha   String
+  senha    String
 
   create_at DateTime? @default(now())
   update_at DateTime? @default(now())

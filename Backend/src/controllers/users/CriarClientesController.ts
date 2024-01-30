@@ -5,6 +5,8 @@ class CriarClienteController {
   async handle(req: Request, res: Response) {
     const {
       nome,
+      email,
+      senha,
       cpf_cnpj,
       rg_ie,
       tel_cel,
@@ -32,6 +34,8 @@ class CriarClienteController {
     const criarClienteServices = new CriarClienteServices();
     const clientes = await criarClienteServices.excecute({
       nome,
+      email,
+      senha,
       cpf_cnpj,
       rg_ie,
       tel_cel,

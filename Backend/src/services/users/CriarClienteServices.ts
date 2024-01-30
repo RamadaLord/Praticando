@@ -2,11 +2,13 @@ import prismaClient from "../../../prisma";
 
 interface CriarClientes {
   nome: string;
+  email: string;
+  senha: string;
   cpf_cnpj: string;
   rg_ie: string;
   tel_cel: string;
   tel_fixo: string;
-  cep: string
+  cep: string;
   rua: string;
   complemento: string;
   bairro: string;
@@ -17,6 +19,8 @@ interface CriarClientes {
 class CriarClienteServices {
   async excecute({
     nome,
+    email,
+    senha,
     cpf_cnpj,
     rg_ie,
     tel_cel,
@@ -30,6 +34,8 @@ class CriarClienteServices {
   }: CriarClientes) {
     if (
       !nome ||
+      !email ||
+      !senha ||
       !cpf_cnpj ||
       !rg_ie ||
       !tel_cel ||
@@ -48,8 +54,8 @@ class CriarClienteServices {
             cpf_cnpj: cpf_cnpj,
           },
           {
-             rg_ie: rg_ie
-             },
+            rg_ie: rg_ie,
+          },
         ],
       },
       select: {
@@ -63,11 +69,13 @@ class CriarClienteServices {
     const clientes = await prismaClient.clientes.create({
       data: {
         nome: nome,
+        email: email,
+        senha: senha,
         cpf_cnpj: cpf_cnpj,
         rg_ie: rg_ie,
         tel_cel: tel_cel,
         tel_fixo: tel_fixo,
-        cep : cep,
+        cep: cep,
         rua: rua,
         complemento: complemento,
         bairro: bairro,
@@ -77,6 +85,8 @@ class CriarClienteServices {
       select: {
         id: true,
         nome: true,
+        email: true,
+        senha: true,
         cpf_cnpj: true,
         rg_ie: true,
         tel_cel: true,
