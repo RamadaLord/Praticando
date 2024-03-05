@@ -33,8 +33,12 @@ router.post('/AuthLogIn', new AuthUsuarioController().handle)
 
 //-------usuarios-------//
 router.post('/CriarUsuarios', new CriarUsuarioController().handle);
-router.get('/ListarUsuarios',ItsAuth, new ListarUsuariosController().handle)
-router.get('/ListarUsuarioUnico/:id',ItsAuth,  new ListarUsuarioUC().handle)
+router.get('/ListarUsuarios',
+// ItsAuth,
+ new ListarUsuariosController().handle)
+router.get('/ListarUsuarioUnico/:id',
+// ItsAuth, 
+ new ListarUsuarioUC().handle)
 router.put('/AlteraUsuario',ItsAuth,  new AlterarUsuarioC().handle)
 router.delete('/DeletarUsuarios',ItsAuth,  new DeletarUsuarioController().handle);
 //-------clientes-------//
@@ -42,8 +46,12 @@ router.post('/CriarClientes', new CriarClienteController().handle);
 router.post('/ClientLogin', new AuthClientesC().handle)
 router.put('/AlteraCliente',ItsAuth,  new AlteraClienteC().handle)
 router.delete('/DeletarClientes',ItsAuth,  new DeletarClientesC().handle)
-router.get('/ListarClientes',ItsAuth,  new ListarClientesController().handle);
-router.get('/ListarClienteUnico/:id',ItsAuth,  new ListarCUC().handle)
+router.get('/ListarClientes',
+// ItsAuth,
+  new ListarClientesController().handle);
+router.get('/ListarClienteUnico/:id',
+// ItsAuth,
+  new ListarCUC().handle)
 //------Motoqueiros------//
 router.post('/CriarMotoqueiro', new CriarMotoqueiroC().handle)
 router.post('/LoginMotoqueiros', new LoginMotoqueirosController().handle)
@@ -51,10 +59,16 @@ router.post('/LoginMotoqueiros', new LoginMotoqueirosController().handle)
 router.post('/CriarProdutos',ItsAuth,  upload.single('file'), new CriarProdutosController().handle)
 router.put('/AlteraProduto',ItsAuth,  new AlteraProdutosC().handle)
 router.delete('/DeletarProdutos',ItsAuth,  new DeletarProdutosC().handle)
-router.get('/ListarProdutos',ItsAuth,  new ListarProdutosController().handle)
-router.get('/ListarProdutoUnico/:id',ItsAuth,  new ListarPUC().handle)
+router.get('/ListarProdutos',
+// ItsAuth,
+  new ListarProdutosController().handle)
+router.get('/ListarProdutoUnico/:id',
+// ItsAuth,
+  new ListarPUC().handle)
 router.post('/CriarCategoria',ItsAuth,  new CategoriasC().handle)
-router.get('/ListarCategorias',ItsAuth,  new ListarCategoriasC().handle)
+router.get('/ListarCategorias',
+// ItsAuth, 
+ new ListarCategoriasC().handle)
 //----------//
 
 //-----Upload de arquivos-----//
