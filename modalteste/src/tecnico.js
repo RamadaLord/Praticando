@@ -1,0 +1,1 @@
+console.log('Graduado no curso tecnico em informatica para web')
